@@ -21,3 +21,53 @@ tags: [Markdown, 博客, 演示]
 category: 示例
 draft: false
 ---
+```
+
+
+# 数学公式$\LaTeX$
+
+$\LaTeX$
+
+$$\LaTeX$$
+
+$$
+\int_a^b f(x),dx
+$$
+
+
+$$
+\int_0^\infty x^2 dx
+$$
+
+$$
+\begin{bmatrix}
+1 & 2 & 3 \\
+4 & 5 & 6 \\
+7 & 8 & 9
+\end{bmatrix}
+$$
+
+$$
+\begin{bmatrix}
+  1 & 2 & 3 \\
+  4 & 5 & 6 \\
+  7 & 8 & 9
+\end{bmatrix}
+\times
+\begin{pmatrix}
+  x \\ y \\ z
+\end{pmatrix}
+=
+\begin{vmatrix}
+  a & b \\
+  c & d
+\end{vmatrix}
+$$
+
+$$
+f(x) = \begin{cases}
+  x^2, & \text{if } x > 0 \\
+  0, & \text{if } x = 0 \\
+  -x, & \text{if } x < 0
+\end{cases}
+$$

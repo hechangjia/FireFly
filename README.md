@@ -82,6 +82,38 @@
 - [x] **侧边栏目录** - 动态显示文章目录，支持锚点跳转
 - [x] **增强代码块** - 基于 Expressive Code，支持代码折叠、行号、语言标识
 - [x] **数学公式支持** - KaTeX 渲染引擎，支持行内和块级公式
+
+**如果你想换成 MathJax，该怎么做？
+虽然不建议（除非你遇到了 KaTeX 报错无法渲染的公式），但如果你想换，Astro 切换非常简单：**
+1. 安装插件：
+```bash
+pnpm remove rehype-katex
+pnpm add rehype-mathjax
+```
+
+2. 修改`astro.config.mjs`
+```JavaScript
+// import rehypeKatex from "rehype-katex"; // 删除这行
+import rehypeMathjax from "rehype-mathjax"; // 加上这行
+
+export default defineConfig({
+    // ...
+    markdown: {
+        // ...
+        rehypePlugins: [
+            // rehypeKatex, // 替换掉
+            rehypeMathjax,
+            // ...
+        ],
+    },
+});
+```
+总结建议
+保持现状 (KaTeX)：对于绝大多数数学、算法、计算机科学的博客，KaTeX 的支持（包括矩阵、分段函数、对齐）已经绰绰有余，而且能保证你的网站加载速度飞快。
+
+除非：你发现写某个复杂的张量分析或者化学公式时，预览一直报错，怎么调都调不好，那时再考虑切换到 MathJax
+
+
 - [x] **Markdown扩展** - [Markdown extended features](https://github.com/saicaca/fuwari?tab=readme-ov-file#-markdown-extended-syntax)
 - [x] **文章随机封面图** - 支持通过 API 获取随机封面图
 
