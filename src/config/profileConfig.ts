@@ -4,9 +4,9 @@ export const profileConfig: ProfileConfig = {
 	// 头像
 	avatar: "/assets/images/avatar.webp",
 	// 名字
-	name: "Firefly",
+	name: "BruceChia",
 	// 个人签名
-	bio: "Hello, I'm Firefly.",
+	bio: "Hello,I'm Chia. My MBTI is INFP",
 
 	// 链接配置
 	// 已经预装的图标集：fa6-brands，fa6-regular，fa6-solid，material-symbols，simple-icons
@@ -18,26 +18,26 @@ export const profileConfig: ProfileConfig = {
 		{
 			name: "Bilibli",
 			icon: "fa6-brands:bilibili",
-			url: "https://space.bilibili.com/38932988",
-			showName: false,
+			url: "https://space.bilibili.com/3546975152638918",
+			showName: true,
 		},
 		{
 			name: "GitHub",
 			icon: "fa6-brands:github",
-			url: "https://github.com/CuteLeaf",
-			showName: false,
+			url: "https://github.com/hechangjia",
+			showName: true,
 		},
 		{
 			name: "Email",
 			icon: "fa6-solid:envelope",
-			url: "mailto:xiaye@msn.com",
-			showName: false,
+			url: "mailto:2136414704@qq.com",
+			showName: true,
 		},
 		{
 			name: "RSS",
 			icon: "fa6-solid:rss",
 			url: "/rss/",
-			showName: false,
+			showName: true,
 		},
 	],
 };
