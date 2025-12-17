@@ -1,4 +1,4 @@
 User-agent: *
 Disallow: /_astro/
 
-Sitemap: https://firefly.hechangjia.cn/sitemap-index.xml
+Sitemap: https://firefly.662613.xyz/sitemap-index.xml
