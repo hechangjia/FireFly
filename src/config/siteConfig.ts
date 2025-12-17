@@ -9,8 +9,7 @@ export const siteConfig: SiteConfig = {
 	title: "小镇错题嘉",
 	subtitle: "INFP-T",
 	site_url: "https://firefly.662613.xyz",
-	description:
-		"BruceChia的博客",
+	description: "BruceChia的博客",
 	keywords: [
 		"Firefly",
 		"Fuwari",
