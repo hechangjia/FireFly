@@ -16,19 +16,19 @@ const getDynamicNavBarConfig = (): NavBarConfig => {
 
 	// 支持自定义导航栏链接,并且支持多级菜单
 	links.push({
-		name: "链接",
+		name: "Links",
 		url: "/links/",
 		icon: "material-symbols:link",
 		children: [
 			{
 				name: "GitHub",
-				url: "https://github.com/CuteLeaf/Firefly",
+				url: "https://github.com/hechangjia",
 				external: true,
 				icon: "fa6-brands:github",
 			},
 			{
 				name: "Bilibili",
-				url: "https://space.bilibili.com/38932988",
+				url: "https://space.bilibili.com/3546975152638918",
 				external: true,
 				icon: "fa6-brands:bilibili",
 			},
@@ -43,7 +43,7 @@ const getDynamicNavBarConfig = (): NavBarConfig => {
 	}
 
 	links.push({
-		name: "关于",
+		name: "More",
 		url: "/content/",
 		icon: "material-symbols:info",
 		children: [

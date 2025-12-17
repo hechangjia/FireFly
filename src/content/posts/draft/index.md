@@ -1,9 +1,10 @@
 ---
 title: 草稿示例
-published: 1970-01-01
+published: 2025-12-17
 tags: [Markdown, 博客, 演示]
 category: 文章示例
-draft: true
+image: "./cover.webp"
+draft: false
 ---
 
 # 这篇文章是草稿

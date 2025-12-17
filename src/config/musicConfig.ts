@@ -18,10 +18,10 @@ export const musicPlayerConfig: MusicPlayerConfig = {
 		server: "netease",
 
 		// 类型：song=单曲, playlist=歌单, album=专辑, search=搜索, artist=艺术家
-		type: "playlist",
+		type: "song",
 
 		// 歌单/专辑/单曲 ID 或搜索关键词
-		id: "10046455237", // 网易云音乐歌单ID示例
+		id: "569213220", // 网易云音乐歌单ID示例
 
 		// 认证 token（可选）
 		auth: "",

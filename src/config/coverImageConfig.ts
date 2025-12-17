@@ -22,7 +22,7 @@ export const coverImageConfig: CoverImageConfig = {
 
 	randomCoverImage: {
 		// 随机封面图功能开关
-		enable: false,
+		enable: true,
 		// 封面图API列表
 		apis: [
 			"https://t.alcy.cc/pc",
@@ -56,7 +56,7 @@ export const coverImageConfig: CoverImageConfig = {
 			// 水印开关
 			enable: true,
 			// 水印文本
-			text: "Random Cover",
+			text: "chia",
 			/**
 			 * 水印位置
 			 * - "top-left": 左上角
