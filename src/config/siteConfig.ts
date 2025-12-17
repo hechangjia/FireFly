@@ -3,27 +3,31 @@ import { fontConfig } from "./fontConfig";
 
 // 定义站点语言
 // 语言代码，例如：'zh_CN', 'zh_TW', 'en', 'ja', 'ru'。
-const SITE_LANG = "zh_CN";
+const SITE_LANG = "en";
 
 export const siteConfig: SiteConfig = {
 	title: "小镇错题嘉",
-	subtitle: "INFP-T",
+	subtitle: "中国式的西西弗斯",
 	site_url: "https://firefly.662613.xyz",
-	description: "BruceChia的博客",
+	description: "一位INFP-T的博客",
 	keywords: [
 		"Firefly",
-		"Fuwari",
 		"Astro",
 		"ACGN",
 		"博客",
 		"技术博客",
 		"静态博客",
+		"chia",
+		"贺昌嘉",
+		"Hello World",
+		"英文",
+		"English",
 	],
 
 	lang: SITE_LANG,
 
 	themeColor: {
-		hue: 200, // 主题色的默认色相，范围从 0 到 360。例如：红色：0，青色：200，蓝绿色：250，粉色：345
+		hue: 300, // 主题色的默认色相，范围从 0 到 360。例如：红色：0，青色：200，蓝绿色：250，粉色：345
 		fixed: false, // 对访问者隐藏主题色选择器
 		defaultMode: "system", // 默认模式："light" 亮色，"dark" 暗色，"system" 跟随系统
 	},
@@ -33,7 +37,7 @@ export const siteConfig: SiteConfig = {
 		{
 			src: "/assets/images/favicon.ico", // 图标文件路径
 			theme: "light", // 可选，指定主题 'light' | 'dark'
-			sizes: "32x32", // 可选，图标大小
+			sizes: "48x48", // 可选，图标大小
 		},
 	],
 
@@ -44,14 +48,14 @@ export const siteConfig: SiteConfig = {
 	// { type: "image", value: "https://example.com/logo.png", alt: "Firefly Logo" }
 	navbarLogo: {
 		type: "image",
-		value: "/assets/images/LiuYingPure3.svg",
+		value: "/assets/images/logo.webp",
 		alt: "🍀",
 	},
-	navbarTitle: "Firefly", // 导航栏标题，可以设置为与 title 不同的值，如果不设置则使用 title
+	navbarTitle: "Passion", // 导航栏标题，可以设置为与 title 不同的值，如果不设置则使用 title
 	navbarWidthFull: false, // 全宽导航栏，导航栏是否占满屏幕宽度，true：占满，false：不占满
 
 	// 站点开始日期，用于统计运行天数
-	siteStartDate: "2025-01-01", // 请修改为你的站点实际开始日期，格式：YYYY-MM-DD
+	siteStartDate: "2025-12-12", // 请修改为你的站点实际开始日期，格式：YYYY-MM-DD
 
 	// bangumi配置
 	bangumi: {
@@ -62,7 +66,7 @@ export const siteConfig: SiteConfig = {
 	showLastModified: true,
 
 	// OpenGraph图片功能,注意开启后要渲染很长时间，不建议本地调试的时候开启
-	generateOgImages: false,
+	generateOgImages: true,
 
 	// 页面开关配置 - 控制特定页面的访问权限，设为false会返回404
 	// bangumi的数据为编译时获取的，所以不是实时数据，请配置bangumi.userId
@@ -118,7 +122,7 @@ export const siteConfig: SiteConfig = {
 				// 主页显示自定义文本（全局开关）
 				enable: true,
 				// 主页横幅主标题
-				title: "Lovely firefly!",
+				title: "Hello World!",
 				// 主页横幅副标题
 				subtitle: [
 					"In Reddened Chrysalis, I Once Rest",
@@ -131,26 +135,26 @@ export const siteConfig: SiteConfig = {
 				typewriter: {
 					//打字机开启 → 循环显示所有副标题
 					//打字机关闭 → 每次刷新随机显示一条副标题
-					enable: false, // 启用副标题打字机效果
+					enable: true, // 启用副标题打字机效果
 					speed: 100, // 打字速度（毫秒）
 					deleteSpeed: 50, // 删除速度（毫秒）
 					pauseTime: 2000, // 完全显示后的暂停时间（毫秒）
 				},
 			},
-			credit: {
-				enable: {
-					desktop: true, // 桌面端显示横幅图片来源文本
-					mobile: true, // 移动端显示横幅图片来源文本
-				},
-				text: {
-					desktop: "Pixiv - 晚晚喵", // 桌面端要显示的来源文本
-					mobile: "Pixiv - KiraraShss", // 移动端要显示的来源文本
-				},
-				url: {
-					desktop: "https://www.pixiv.net/artworks/135490046", // 桌面端原始艺术品或艺术家页面的 URL 链接
-					mobile: "https://www.pixiv.net/users/42715864", // 移动端原始艺术品或艺术家页面的 URL 链接
-				},
-			},
+			// credit: {
+			// 	enable: {
+			// 		desktop: true, // 桌面端显示横幅图片来源文本
+			// 		mobile: true, // 移动端显示横幅图片来源文本
+			// 	},
+			// 	text: {
+			// 		desktop: "Pixiv - 晚晚喵", // 桌面端要显示的来源文本
+			// 		mobile: "Pixiv - KiraraShss", // 移动端要显示的来源文本
+			// 	},
+			// 	url: {
+			// 		desktop: "https://www.pixiv.net/artworks/135490046", // 桌面端原始艺术品或艺术家页面的 URL 链接
+			// 		mobile: "https://www.pixiv.net/users/42715864", // 移动端原始艺术品或艺术家页面的 URL 链接
+			// 	},
+			// },
 			navbar: {
 				transparentMode: "semifull", // 导航栏透明模式："semi" 半透明加圆角，"full" 完全透明，"semifull" 动态透明
 			},
