@@ -6,7 +6,7 @@ export const commentConfig: CommentConfig = {
 
 	//twikoo评论系统配置
 	twikoo: {
-		envId: "https://hcjcomment.netlify.app/",
+		envId: "https://hcjcomment.netlify.app/.netlify/functions/twikoo",
 		lang: "zh-CN", // 设置 Twikoo 评论系统语言
 		visitorCount: true, // 文章访问量统计功能。
 	},
