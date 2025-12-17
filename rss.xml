@@ -314,7 +314,46 @@ published: 2024-01-11T04:40:26.381Z
 tags: [Markdown, 博客, 演示]
 category: 示例
 draft: false
----&lt;/code&gt;&lt;/pre&gt;
+---
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h1&gt;数学公式$\LaTeX$&lt;/h1&gt;
+&lt;p&gt;$\LaTeX$&lt;/p&gt;
+&lt;p&gt;$$\LaTeX$$&lt;/p&gt;
+&lt;p&gt;$$
+\int_a^b f(x),dx
+$$&lt;/p&gt;
+&lt;p&gt;$$
+\int_0^\infty x^2 dx
+$$&lt;/p&gt;
+&lt;p&gt;$$
+\begin{bmatrix}
+1 &amp;amp; 2 &amp;amp; 3 \
+4 &amp;amp; 5 &amp;amp; 6 \
+7 &amp;amp; 8 &amp;amp; 9
+\end{bmatrix}
+$$&lt;/p&gt;
+&lt;h1&gt;$$
+\begin{bmatrix}
+1 &amp;amp; 2 &amp;amp; 3 \
+4 &amp;amp; 5 &amp;amp; 6 \
+7 &amp;amp; 8 &amp;amp; 9
+\end{bmatrix}
+\times
+\begin{pmatrix}
+x \ y \ z
+\end{pmatrix}&lt;/h1&gt;
+&lt;p&gt;\begin{vmatrix}
+a &amp;amp; b \
+c &amp;amp; d
+\end{vmatrix}
+$$&lt;/p&gt;
+&lt;p&gt;$$
+f(x) = \begin{cases}
+x^2, &amp;amp; \text{if } x &amp;gt; 0 \
+0, &amp;amp; \text{if } x = 0 \
+-x, &amp;amp; \text{if } x &amp;lt; 0
+\end{cases}
+$$&lt;/p&gt;
 </content:encoded></item><item><title>Markdown 扩展功能</title><link>https://firefly.662613.xyz/posts/markdown-extended/</link><guid isPermaLink="true">https://firefly.662613.xyz/posts/markdown-extended/</guid><description>了解 Firefly 中的 Markdown 功能</description><pubDate>Wed, 17 Dec 2025 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;GitHub 仓库卡片&lt;/h2&gt;
 &lt;p&gt;您可以添加链接到 GitHub 仓库的动态卡片，在页面加载时，仓库信息会从 GitHub API 获取。&lt;/p&gt;
 &lt;p&gt;::github{repo=&quot;CuteLeaf/Firefly&quot;}&lt;/p&gt;
