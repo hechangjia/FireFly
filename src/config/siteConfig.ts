@@ -3,7 +3,7 @@ import { fontConfig } from "./fontConfig";
 
 // 定义站点语言
 // 语言代码，例如：'zh_CN', 'zh_TW', 'en', 'ja', 'ru'。
-const SITE_LANG = "en";
+const SITE_LANG = "zh_CN";
 
 export const siteConfig: SiteConfig = {
 	title: "小镇错题嘉",
