@@ -18,6 +18,7 @@ const config = {
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js" integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC+Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa" crossorigin="anonymous"></script>
 
 <div id="tcomment"></div>
+
 <script is:inline src={url("/assets/js/firefly-twikoo-1.6.44.all.min.js")}></script>
 <script is:inline define:vars={{ config }}>
   // 获取当前页面路径
@@ -42,21 +43,19 @@ const config = {
     if (typeof twikoo !== "undefined") {
       const commentEl = document.getElementById("tcomment");
       if (commentEl) {
-        commentEl.innerHTML = "";
-
+        commentEl.innerHTML = ""; // 清空容器防止重复渲染
         const dynamicConfig = createTwikooConfig();
+        
         console.log("[Twikoo] 初始化配置:", dynamicConfig);
-        twikoo
-          .init(dynamicConfig)
-          .then(() => {
+        
+        twikoo.init(dynamicConfig).then(() => {
             console.log("[Twikoo] 初始化完成");
-          })
-          .catch((error) => {
+        }).catch((error) => {
             console.error("[Twikoo] 初始化失败:", error);
-          });
+        });
       }
     } else {
-      // 如果 Twikoo 未加载，稍后重试
+      // 如果脚本还没加载完，稍后重试
       setTimeout(initTwikoo, 500);
     }
   }
@@ -64,7 +63,7 @@ const config = {
   // 页面加载时初始化
   document.addEventListener("DOMContentLoaded", initTwikoo);
 
-  // Swup 页面切换后重新初始化
+  // Swup 页面切换适配
   if (window.swup && window.swup.hooks) {
     window.swup.hooks.on("content:replace", function () {
       setTimeout(initTwikoo, 200);
