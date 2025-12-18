@@ -354,6 +354,7 @@ x^2, &amp;amp; \text{if } x &amp;gt; 0 \
 -x, &amp;amp; \text{if } x &amp;lt; 0
 \end{cases}
 $$&lt;/p&gt;
+&lt;h1&gt;测试 $$\int_0^\infty x^2 dx$$&lt;/h1&gt;
 </content:encoded></item><item><title>Markdown 扩展功能</title><link>https://firefly.662613.xyz/posts/markdown-extended/</link><guid isPermaLink="true">https://firefly.662613.xyz/posts/markdown-extended/</guid><description>了解 Firefly 中的 Markdown 功能</description><pubDate>Wed, 17 Dec 2025 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;GitHub 仓库卡片&lt;/h2&gt;
 &lt;p&gt;您可以添加链接到 GitHub 仓库的动态卡片，在页面加载时，仓库信息会从 GitHub API 获取。&lt;/p&gt;
 &lt;p&gt;::github{repo=&quot;CuteLeaf/Firefly&quot;}&lt;/p&gt;
