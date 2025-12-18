@@ -9,7 +9,7 @@ export const siteConfig: SiteConfig = {
 	title: "小镇错题嘉",
 	subtitle: "中国式的西西弗斯",
 	site_url: "https://firefly.662613.xyz",
-	description: "一位INFP-T的博客",
+	description: "A Blog Of An INFP-T",
 	keywords: [
 		"Firefly",
 		"Astro",
@@ -94,7 +94,7 @@ export const siteConfig: SiteConfig = {
 	// 分页配置
 	pagination: {
 		// 每页显示的文章数量
-		postsPerPage: 9,
+		postsPerPage: 4,
 	},
 
 	backgroundWallpaper: {
@@ -106,9 +106,9 @@ export const siteConfig: SiteConfig = {
 		// 背景图片配置
 		src: {
 			// 桌面背景图片
-			desktop: "/assets/images/d1.webp",
+			desktop: "/assets/images/desktop/25.webp",
 			// 移动背景图片
-			mobile: "/assets/images/m3.webp",
+			mobile: "/assets/images/mobile/1.webp",
 		},
 
 		// Banner模式特有配置
@@ -116,7 +116,7 @@ export const siteConfig: SiteConfig = {
 			// 图片位置
 			// 支持所有CSS object-position值，如: 'top', 'center', 'bottom', 'left top', 'right bottom', '25% 75%', '10px 20px'..
 			// 如果不知道怎么配置百分百之类的配置，推荐直接使用：'center'居中，'top'顶部居中，'bottom' 底部居中，'left'左侧居中，'right'右侧居中
-			position: "0% 20%",
+			position: "25% 62%",
 
 			// homeText: {
 			// 	// 主页显示自定义文本（全局开关）
@@ -180,7 +180,7 @@ export const siteConfig: SiteConfig = {
 		// 全屏透明覆盖模式特有配置
 		overlay: {
 			zIndex: -1, // 层级，确保壁纸在背景层
-			opacity: 0.8, // 壁纸透明度
+			opacity: 0.5, // 壁纸透明度
 			blur: 1, // 背景模糊程度
 		},
 	},
