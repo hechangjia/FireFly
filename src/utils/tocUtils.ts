@@ -122,7 +122,15 @@ export class TOCManager {
 				heading1Count++;
 			}
 
-			const headingText = (heading.textContent || "").replace(/#+\s*$/, "");
+			// 1. 克隆节点，防止修改原标题
+			const tempNode = heading.cloneNode(true);
+
+			// 2. 移除标题内的锚点链接（如果有的话，防止目录出现 # 号）
+			const anchor = tempNode.querySelector(".anchor");
+			if (anchor) anchor.remove();
+
+			// 3. 使用 innerHTML 获取包含 HTML 标签（即公式）的内容
+			const headingText = tempNode.innerHTML;
 
 			tocHTML += `
         <a 

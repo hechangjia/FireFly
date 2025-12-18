@@ -71,3 +71,5 @@ f(x) = \begin{cases}
   -x, & \text{if } x < 0
 \end{cases}
 $$
+
+# 测试 $$\int_0^\infty x^2 dx$$

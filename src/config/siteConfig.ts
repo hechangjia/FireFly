@@ -28,7 +28,7 @@ export const siteConfig: SiteConfig = {
 
 	themeColor: {
 		hue: 300, // 主题色的默认色相，范围从 0 到 360。例如：红色：0，青色：200，蓝绿色：250，粉色：345
-		fixed: false, // 对访问者隐藏主题色选择器
+		fixed: true, // 对访问者隐藏主题色选择器
 		defaultMode: "system", // 默认模式："light" 亮色，"dark" 暗色，"system" 跟随系统
 	},
 
@@ -118,29 +118,29 @@ export const siteConfig: SiteConfig = {
 			// 如果不知道怎么配置百分百之类的配置，推荐直接使用：'center'居中，'top'顶部居中，'bottom' 底部居中，'left'左侧居中，'right'右侧居中
 			position: "0% 20%",
 
-			homeText: {
-				// 主页显示自定义文本（全局开关）
-				enable: true,
-				// 主页横幅主标题
-				title: "Hello World!",
-				// 主页横幅副标题
-				subtitle: [
-					"In Reddened Chrysalis, I Once Rest",
-					"From Shattered Sky, I Free Fall",
-					"Amidst Silenced Stars, I Deep Sleep",
-					"Upon Lighted Fyrefly, I Soon Gaze",
-					"From Undreamt Night, I Thence Shine",
-					"In Finalized Morrow, I Full Bloom",
-				],
-				typewriter: {
-					//打字机开启 → 循环显示所有副标题
-					//打字机关闭 → 每次刷新随机显示一条副标题
-					enable: true, // 启用副标题打字机效果
-					speed: 100, // 打字速度（毫秒）
-					deleteSpeed: 50, // 删除速度（毫秒）
-					pauseTime: 2000, // 完全显示后的暂停时间（毫秒）
-				},
-			},
+			// homeText: {
+			// 	// 主页显示自定义文本（全局开关）
+			// 	enable: true,
+			// 	// 主页横幅主标题
+			// 	title: "Hello World!",
+			// 	// 主页横幅副标题
+			// 	subtitle: [
+			// 		"In Reddened Chrysalis, I Once Rest",
+			// 		"From Shattered Sky, I Free Fall",
+			// 		"Amidst Silenced Stars, I Deep Sleep",
+			// 		"Upon Lighted Fyrefly, I Soon Gaze",
+			// 		"From Undreamt Night, I Thence Shine",
+			// 		"In Finalized Morrow, I Full Bloom",
+			// 	],
+			// 	typewriter: {
+			// 		//打字机开启 → 循环显示所有副标题
+			// 		//打字机关闭 → 每次刷新随机显示一条副标题
+			// 		enable: true, // 启用副标题打字机效果
+			// 		speed: 100, // 打字速度（毫秒）
+			// 		deleteSpeed: 50, // 删除速度（毫秒）
+			// 		pauseTime: 2000, // 完全显示后的暂停时间（毫秒）
+			// 	},
+			// },
 			// credit: {
 			// 	enable: {
 			// 		desktop: true, // 桌面端显示横幅图片来源文本

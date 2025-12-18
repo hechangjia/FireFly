@@ -127,7 +127,7 @@ export const sidebarLayoutConfig: SidebarLayoutConfig = {
 			// 组件位置
 			position: "sticky",
 			// 是否在文章详情页显示
-			showOnPostPage: false,
+			showOnPostPage: true,
 			// CSS 类名
 			class: "onload-animation",
 			// 动画延迟时间
