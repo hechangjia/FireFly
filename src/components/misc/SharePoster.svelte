@@ -12,7 +12,7 @@ export let pubDate: string;
 export let coverImage: string | null = null;
 export let url: string;
 export let siteTitle: string;
-export let category: string | undefined = undefined;
+export const category: string | undefined = undefined;
 export let avatar: string | null = null;
 
 let showModal = false;
@@ -103,8 +103,8 @@ async function generatePoster() {
 
 	generating = true;
 	try {
-		const scale = 2;
-		const width = 375 * scale;
+		const scale = 6;
+		const width = 425 * scale;
 		const padding = 24 * scale;
 
 		// 1. Prepare resources
