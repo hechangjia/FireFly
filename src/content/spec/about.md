@@ -3,13 +3,14 @@
 # 关于我/About Me
 
 ## GitHub主页
-::github{profile="hechangjia"}
+::github{repo="hechangjia/hechangjia"}
 
 ## 我的性格
 
 :::note[自我性格表述]
 **Sensitive/很敏感**
-：：：
+:::
+
 
 :::warning
 我为什么就是不愿意脚踏实地呢
