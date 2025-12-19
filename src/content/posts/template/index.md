@@ -3,13 +3,13 @@ author: 贺昌嘉
 title: Posts模板
 date: 2025-12-18
 description: 这是描述内容。
+slug: template
 image: /assets/images/mobile/1.webp
-pinned: true
+pinned: false
 tags: [Markdown, Blogging, Test, Template]
 category: Demo
 published: 2025-01-20
-licenseName: "Unlicensed"
-sourceLink: "https://github.com/emn178/markdown"
+licenseName: "MIT"
 draft: true
 ---
 
