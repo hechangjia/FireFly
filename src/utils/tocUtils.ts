@@ -123,7 +123,7 @@ export class TOCManager {
 			}
 
 			// 1. 克隆节点，防止修改原标题
-			const tempNode = heading.cloneNode(true);
+			const tempNode = heading.cloneNode(true) as HTMLElement;
 
 			// 2. 移除标题内的锚点链接（如果有的话，防止目录出现 # 号）
 			const anchor = tempNode.querySelector(".anchor");
