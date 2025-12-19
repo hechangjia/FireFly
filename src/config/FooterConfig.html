@@ -1,3 +1,33 @@
+<div id="hitokoto-container"
+    style="text-align: center; margin-top: 1rem; font-style: italic; color: var(--text-color-secondary);">
+    <span id="hitokoto-text">Loading Hitokoto...</span>
+</div>
+<script>
+    function fetchHitokoto() {
+        fetch('https://v1.hitokoto.cn/')
+            .then(response => response.json())
+            .then(data => {
+                const hitokotoText = document.getElementById('hitokoto-text');
+                if (hitokotoText) {
+                    hitokotoText.textContent = `${data.hitokoto} —— ${data.from}`;
+                }
+            })
+            .catch(error => {
+                console.error('Failed to fetch Hitokoto:', error);
+                const hitokotoText = document.getElementById('hitokoto-text');
+                if (hitokotoText) {
+                    hitokotoText.textContent = 'Failed to load Hitokoto.';
+                }
+            });
+    }
+    // Run on initial load
+    fetchHitokoto();
+
+    // Re-run on swup content replacement if available
+    if (window.swup && window.swup.hooks) {
+        window.swup.hooks.on('content:replace', fetchHitokoto);
+    }
+</script>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-3Y03KC02P2"></script>
 <script>
