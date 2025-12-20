@@ -2,7 +2,21 @@
 
 # 关于我/About Me
 
+<img src="/assets/images/desktop/1.webp" width = "480" height = "480" alt="Firefly" align=right />
+
+<div align="center">
+
+# Firefly
+> [!TIP]
+> 无限进步
+</div>
+
+---
+
+
+
 ## GitHub主页
+
 ::github{repo="hechangjia/hechangjia"}
 
 ## 我的性格
