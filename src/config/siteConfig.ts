@@ -127,7 +127,7 @@ export const siteConfig: SiteConfig = {
 			showIndicators: true, // 显示指示器
 			showControls: true, // 显示控制按钮
 			effect: "fade", // 效果："fade" 或 "slide"
-			randomOrder: false, // 随机顺序播放
+			randomOrder: true, // 随机顺序播放
 			// 视频设置
 			videoSettings: {
 				muted: true, // 视频静音
