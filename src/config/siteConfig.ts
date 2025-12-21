@@ -103,12 +103,66 @@ export const siteConfig: SiteConfig = {
 		// 是否允许用户通过导航栏切换壁纸模式，设为false可提升性能（只渲染当前模式）
 		switchable: true,
 
-		// 背景图片配置
+		// 背景图片配置（当未启用自动媒体轮播时使用）
 		src: {
-			// 桌面背景图片
 			desktop: "/assets/images/desktop/1.webp",
-			// 移动背景图片
 			mobile: "/assets/images/mobile/1.webp",
+		},
+		
+		// ===== 推荐：自动媒体轮播 =====
+		// 自动读取文件夹中的所有图片和视频进行混合轮播
+		autoMediaCarousel: {
+			enable: true, // 启用自动媒体轮播
+			folders: {
+				desktop: "/assets/images/desktop/", // 桌面端媒体文件夹
+				mobile: "/assets/images/mobile/",   // 移动端媒体文件夹
+			},
+			// 支持的文件扩展名（可选，以下为默认值）
+			imageExtensions: ['.webp', '.jpg', '.jpeg', '.png', '.gif', '.svg'],
+			videoExtensions: ['.mp4', '.webm'],
+			// 轮播设置
+			interval: 5000,        // 切换间隔（毫秒）
+			transition: 2500,      // 过渡时间（毫秒）
+			pauseOnHover: true,   // 鼠标悬停时暂停
+			showIndicators: true,  // 显示指示器
+			showControls: true,   // 显示控制按钮
+			effect: "fade",        // 效果："fade" 或 "slide"
+			randomOrder: false,     // 随机顺序播放
+			// 视频设置
+			videoSettings: {
+				muted: true,       // 视频静音
+				loop: false,       // 单个视频是否循环（false时播放完自动切换）
+				objectFit: "cover", // 填充方式
+			},
+		},
+		
+		// ===== 手动轮播配置（当src为数组时生效）=====
+		// carousel: {
+		// 	enable: true,
+		// 	interval: 5000,
+		// 	transition: 1000,
+		// 	pauseOnHover: false,
+		// 	showIndicators: true,
+		// 	showControls: false,
+		// 	effect: "fade",
+		// 	randomOrder: false,
+		// },
+		
+		// ===== 单视频背景配置 =====
+		video: {
+			enable: false,
+			src: {
+				desktop: "/assets/video/1.mp4",
+				mobile: "/assets/video/1.webm",
+			},
+			poster: "/assets/images/desktop/1.webp",
+			loop: true,
+			muted: true,
+			autoplay: true,
+			objectFit: "cover",
+			opacity: 1,
+			playbackRate: 1,
+			controls: false,
 		},
 
 		// Banner模式特有配置

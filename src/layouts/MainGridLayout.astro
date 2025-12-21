@@ -14,13 +14,18 @@ import TypewriterText from "@/components/content/TypewriterText.astro";
 import FloatingTOC from "@/components/interactive/FloatingTOC.astro";
 import IconifyLoader from "@/components/misc/IconifyLoader.astro";
 import ImageWrapper from "@/components/misc/ImageWrapper.astro";
+import BackgroundCarousel from "@/components/misc/BackgroundCarousel.svelte";
+import VideoBackground from "@/components/misc/VideoBackground.svelte";
+import MediaCarousel from "@/components/misc/MediaCarousel.svelte";
 import { live2dModelConfig, siteConfig } from "@/config";
 import {
 	BANNER_HEIGHT,
 	BANNER_HEIGHT_EXTEND,
 	MAIN_PANEL_OVERLAPS_BANNER_HEIGHT,
 } from "@/constants/constants";
-import { getBackgroundImages, isHomePage } from "@/utils/layout-utils";
+import { getBackgroundImages, isHomePage, isCarouselEnabled, isVideoEnabled, getVideoSrc } from "@/utils/layout-utils";
+import { getAutoMediaCarouselItems, isAutoMediaCarouselEnabled } from "@/utils/media-utils";
+import type { MediaItem } from "@/utils/media-utils";
 import {
 	generateGridClasses,
 	generateMainContentClasses,
@@ -57,6 +62,20 @@ const isBannerMode = siteConfig.backgroundWallpaper.mode === "banner";
 const isOverlayMode = siteConfig.backgroundWallpaper.mode === "overlay";
 const isBackgroundEnabled = siteConfig.backgroundWallpaper.mode !== "none";
 const isWallpaperSwitchable = siteConfig.backgroundWallpaper.switchable ?? true;
+
+// 检查是否启用轮播和视频
+const carouselEnabled = isCarouselEnabled();
+const videoEnabled = isVideoEnabled();
+const carouselConfig = siteConfig.backgroundWallpaper.carousel;
+const videoConfig = siteConfig.backgroundWallpaper.video;
+
+// 检查是否启用自动媒体轮播
+const autoMediaEnabled = isAutoMediaCarouselEnabled();
+const autoMediaConfig = siteConfig.backgroundWallpaper.autoMediaCarousel;
+let autoMediaItems: { desktop: MediaItem[]; mobile: MediaItem[] } = { desktop: [], mobile: [] };
+if (autoMediaEnabled) {
+	autoMediaItems = getAutoMediaCarouselItems();
+}
 
 // 检查是否启用波浪动画效果
 const wavesConfig = siteConfig.backgroundWallpaper.banner?.waves?.enable;
@@ -197,23 +216,145 @@ const navbarWidthFull = siteConfig.navbarWidthFull ?? false;
 <!-- Banner - 如果允许切换则始终渲染，否则只渲染当前模式 -->
 {(isWallpaperSwitchable || isBannerMode) && (
 <div id="banner-wrapper" class={`absolute z-10 w-full transition duration-700 overflow-hidden ${mobileNonHomeBannerClass}`} style={isWallpaperSwitchable ? `top: -${BANNER_HEIGHT_EXTEND}vh; display: none;` : `top: -${BANNER_HEIGHT_EXTEND}vh`}>
-    <!-- 背景图片显示 -->
+    <!-- 背景显示 -->
     <div class="relative h-full w-full">
-        <!-- Mobile: use mobile-specific image -->
-        <ImageWrapper 
-            alt="Mobile background image of the blog" 
-            class:list={["block lg:hidden object-cover h-full w-full transition duration-700 opacity-100"]}
-            src={typeof backgroundImages.mobile === 'string' ? backgroundImages.mobile : (typeof backgroundImages.desktop === 'string' ? backgroundImages.desktop : '')} 
-            position={siteConfig.backgroundWallpaper.banner?.position}
-        />
-        <!-- Desktop: use desktop-specific image -->
-        <ImageWrapper 
-            id="banner" 
-            alt="Desktop background image of the blog" 
-            class:list={["hidden lg:block object-cover h-full transition duration-700 opacity-100"]}
-            src={typeof backgroundImages.desktop === 'string' ? backgroundImages.desktop : (typeof backgroundImages.mobile === 'string' ? backgroundImages.mobile : '')} 
-            position={siteConfig.backgroundWallpaper.banner?.position}
-        />
+        {autoMediaEnabled && autoMediaConfig ? (
+            <>
+                <!-- 自动媒体轮播 - Mobile -->
+                {autoMediaItems.mobile.length > 0 && (
+                    <MediaCarousel
+                        client:load
+                        items={autoMediaItems.mobile}
+                        interval={autoMediaConfig.interval ?? 5000}
+                        transition={autoMediaConfig.transition ?? 1000}
+                        pauseOnHover={autoMediaConfig.pauseOnHover ?? false}
+                        showIndicators={autoMediaConfig.showIndicators ?? true}
+                        showControls={autoMediaConfig.showControls ?? false}
+                        effect={autoMediaConfig.effect ?? 'fade'}
+                        randomOrder={autoMediaConfig.randomOrder ?? false}
+                        position={siteConfig.backgroundWallpaper.banner?.position}
+                        videoSettings={autoMediaConfig.videoSettings}
+                        class="block lg:hidden h-full w-full"
+                    />
+                )}
+                <!-- 自动媒体轮播 - Desktop -->
+                {autoMediaItems.desktop.length > 0 && (
+                    <MediaCarousel
+                        client:load
+                        items={autoMediaItems.desktop}
+                        interval={autoMediaConfig.interval ?? 5000}
+                        transition={autoMediaConfig.transition ?? 1000}
+                        pauseOnHover={autoMediaConfig.pauseOnHover ?? false}
+                        showIndicators={autoMediaConfig.showIndicators ?? true}
+                        showControls={autoMediaConfig.showControls ?? false}
+                        effect={autoMediaConfig.effect ?? 'fade'}
+                        randomOrder={autoMediaConfig.randomOrder ?? false}
+                        position={siteConfig.backgroundWallpaper.banner?.position}
+                        videoSettings={autoMediaConfig.videoSettings}
+                        class="hidden lg:block h-full w-full"
+                    />
+                )}
+            </>
+        ) : videoEnabled && videoConfig ? (
+            <>
+                <!-- 视频背景 - Mobile -->
+                <VideoBackground
+                    client:load
+                    src={getVideoSrc(true)}
+                    poster={videoConfig.poster}
+                    loop={videoConfig.loop ?? true}
+                    muted={videoConfig.muted ?? true}
+                    autoplay={videoConfig.autoplay ?? true}
+                    objectFit={videoConfig.objectFit ?? 'cover'}
+                    opacity={videoConfig.opacity ?? 1}
+                    playbackRate={videoConfig.playbackRate ?? 1}
+                    controls={videoConfig.controls ?? false}
+                    class="block lg:hidden"
+                />
+                <!-- 视频背景 - Desktop -->
+                <VideoBackground
+                    client:load
+                    src={getVideoSrc(false)}
+                    poster={videoConfig.poster}
+                    loop={videoConfig.loop ?? true}
+                    muted={videoConfig.muted ?? true}
+                    autoplay={videoConfig.autoplay ?? true}
+                    objectFit={videoConfig.objectFit ?? 'cover'}
+                    opacity={videoConfig.opacity ?? 1}
+                    playbackRate={videoConfig.playbackRate ?? 1}
+                    controls={videoConfig.controls ?? false}
+                    class="hidden lg:block"
+                />
+            </>
+        ) : carouselEnabled && carouselConfig ? (
+            <>
+                <!-- 轮播背景 - Mobile -->
+                {Array.isArray(backgroundImages.mobile) && backgroundImages.mobile.length > 1 ? (
+                    <BackgroundCarousel
+                        client:load
+                        images={backgroundImages.mobile}
+                        interval={carouselConfig.interval ?? 5000}
+                        transition={carouselConfig.transition ?? 1000}
+                        pauseOnHover={carouselConfig.pauseOnHover ?? false}
+                        showIndicators={carouselConfig.showIndicators ?? true}
+                        showControls={carouselConfig.showControls ?? false}
+                        effect={carouselConfig.effect ?? 'fade'}
+                        randomOrder={carouselConfig.randomOrder ?? false}
+                        position={siteConfig.backgroundWallpaper.banner?.position}
+                        class="block lg:hidden h-full w-full"
+                    />
+                ) : (
+                    <ImageWrapper
+                        alt="Mobile background image of the blog"
+                        class:list={["block lg:hidden object-cover h-full w-full transition duration-700 opacity-100"]}
+                        src={typeof backgroundImages.mobile === 'string' ? backgroundImages.mobile : (Array.isArray(backgroundImages.mobile) ? backgroundImages.mobile[0] : '')}
+                        position={siteConfig.backgroundWallpaper.banner?.position}
+                    />
+                )}
+                <!-- 轮播背景 - Desktop -->
+                {Array.isArray(backgroundImages.desktop) && backgroundImages.desktop.length > 1 ? (
+                    <BackgroundCarousel
+                        client:load
+                        images={backgroundImages.desktop}
+                        interval={carouselConfig.interval ?? 5000}
+                        transition={carouselConfig.transition ?? 1000}
+                        pauseOnHover={carouselConfig.pauseOnHover ?? false}
+                        showIndicators={carouselConfig.showIndicators ?? true}
+                        showControls={carouselConfig.showControls ?? false}
+                        effect={carouselConfig.effect ?? 'fade'}
+                        randomOrder={carouselConfig.randomOrder ?? false}
+                        position={siteConfig.backgroundWallpaper.banner?.position}
+                        class="hidden lg:block h-full w-full"
+                    />
+                ) : (
+                    <ImageWrapper
+                        id="banner"
+                        alt="Desktop background image of the blog"
+                        class:list={["hidden lg:block object-cover h-full transition duration-700 opacity-100"]}
+                        src={typeof backgroundImages.desktop === 'string' ? backgroundImages.desktop : (Array.isArray(backgroundImages.desktop) ? backgroundImages.desktop[0] : '')}
+                        position={siteConfig.backgroundWallpaper.banner?.position}
+                    />
+                )}
+            </>
+        ) : (
+            <>
+                <!-- 静态背景图片 - Mobile -->
+                <ImageWrapper
+                    alt="Mobile background image of the blog"
+                    class:list={["block lg:hidden object-cover h-full w-full transition duration-700 opacity-100"]}
+                    src={typeof backgroundImages.mobile === 'string' ? backgroundImages.mobile : (typeof backgroundImages.desktop === 'string' ? backgroundImages.desktop : '')}
+                    position={siteConfig.backgroundWallpaper.banner?.position}
+                />
+                <!-- 静态背景图片 - Desktop -->
+                <ImageWrapper
+                    id="banner"
+                    alt="Desktop background image of the blog"
+                    class:list={["hidden lg:block object-cover h-full transition duration-700 opacity-100"]}
+                    src={typeof backgroundImages.desktop === 'string' ? backgroundImages.desktop : (typeof backgroundImages.mobile === 'string' ? backgroundImages.mobile : '')}
+                    position={siteConfig.backgroundWallpaper.banner?.position}
+                />
+            </>
+        )}
     </div>
     
     <!-- Home page text overlay - 始终渲染以便切换模式时控制显示 -->

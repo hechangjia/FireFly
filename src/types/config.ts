@@ -462,6 +462,61 @@ export type BackgroundWallpaperConfig = {
 				desktop?: string | string[];
 				mobile?: string | string[];
 		  }; // 支持单个图片、图片数组或分别设置桌面端和移动端图片
+	
+	// 自动媒体轮播配置（自动读取文件夹中的图片和视频）
+	autoMediaCarousel?: {
+		enable: boolean; // 是否启用自动媒体轮播
+		folders: {
+			desktop?: string; // 桌面端媒体文件夹路径，如 "/assets/images/desktop/"
+			mobile?: string; // 移动端媒体文件夹路径，如 "/assets/images/mobile/"
+		};
+		// 支持的文件扩展名
+		imageExtensions?: string[]; // 图片扩展名，默认 ['.webp', '.jpg', '.jpeg', '.png', '.gif']
+		videoExtensions?: string[]; // 视频扩展名，默认 ['.mp4', '.webm']
+		interval?: number; // 轮播间隔时间（毫秒），默认5000
+		transition?: number; // 过渡动画时间（毫秒），默认1000
+		pauseOnHover?: boolean; // 鼠标悬停时暂停轮播，默认false
+		showIndicators?: boolean; // 是否显示指示器，默认true
+		showControls?: boolean; // 是否显示控制按钮，默认false
+		effect?: "fade" | "slide"; // 轮播效果：淡入淡出或滑动，默认fade
+		randomOrder?: boolean; // 是否随机顺序播放，默认false
+		videoSettings?: {
+			muted?: boolean; // 视频是否静音，默认true
+			loop?: boolean; // 单个视频是否循环（false时会自动切换到下一个），默认false
+			objectFit?: "cover" | "contain" | "fill"; // 视频填充方式，默认cover
+		};
+	};
+	
+	// 手动轮播配置（手动指定文件列表）
+	carousel?: {
+		enable: boolean; // 是否启用轮播
+		interval?: number; // 轮播间隔时间（毫秒），默认5000
+		transition?: number; // 过渡动画时间（毫秒），默认1000
+		pauseOnHover?: boolean; // 鼠标悬停时暂停轮播，默认false
+		showIndicators?: boolean; // 是否显示指示器，默认true
+		showControls?: boolean; // 是否显示控制按钮，默认false
+		effect?: "fade" | "slide"; // 轮播效果：淡入淡出或滑动，默认fade
+		randomOrder?: boolean; // 是否随机顺序播放，默认false
+	};
+	
+	// 单视频背景配置
+	video?: {
+		enable: boolean; // 是否启用视频背景
+		src:
+			| string
+			| {
+					desktop?: string;
+					mobile?: string;
+			  }; // 视频源，支持单个视频或分别设置桌面端和移动端
+		poster?: string; // 视频封面图片
+		loop?: boolean; // 是否循环播放，默认true
+		muted?: boolean; // 是否静音，默认true
+		autoplay?: boolean; // 是否自动播放，默认true
+		objectFit?: "cover" | "contain" | "fill"; // 视频填充方式，默认cover
+		opacity?: number; // 视频透明度，0-1，默认1
+		playbackRate?: number; // 播放速度，默认1
+		controls?: boolean; // 是否显示控制条，默认false
+	};
 
 	// Banner模式特有配置
 	banner?: {

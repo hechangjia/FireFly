@@ -19,11 +19,46 @@ export const getBackgroundImages = () => {
 			mobile: srcObj.mobile || srcObj.desktop || "",
 		};
 	}
-	// 如果是字符串，同时用于桌面端和移动端
+	// 如果是字符串或数组，同时用于桌面端和移动端
 	return {
 		desktop: bgSrc,
 		mobile: bgSrc,
 	};
+};
+
+// 检查是否启用轮播
+export const isCarouselEnabled = (): boolean => {
+	const carousel = siteConfig.backgroundWallpaper.carousel;
+	if (!carousel) return false;
+	
+	const bgImages = getBackgroundImages();
+	const hasMultipleDesktop = Array.isArray(bgImages.desktop) && bgImages.desktop.length > 1;
+	const hasMultipleMobile = Array.isArray(bgImages.mobile) && bgImages.mobile.length > 1;
+	
+	return carousel.enable && (hasMultipleDesktop || hasMultipleMobile);
+};
+
+// 检查是否启用视频背景
+export const isVideoEnabled = (): boolean => {
+	const video = siteConfig.backgroundWallpaper.video;
+	return video?.enable ?? false;
+};
+
+// 获取视频源
+export const getVideoSrc = (isMobile: boolean = false): string => {
+	const video = siteConfig.backgroundWallpaper.video;
+	if (!video || !video.enable) return "";
+	
+	const src = video.src;
+	if (typeof src === "string") {
+		return src;
+	}
+	
+	if (typeof src === "object") {
+		return isMobile ? (src.mobile || src.desktop || "") : (src.desktop || src.mobile || "");
+	}
+	
+	return "";
 };
 
 // 类型守卫函数
