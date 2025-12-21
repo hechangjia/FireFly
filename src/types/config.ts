@@ -462,7 +462,7 @@ export type BackgroundWallpaperConfig = {
 				desktop?: string | string[];
 				mobile?: string | string[];
 		  }; // 支持单个图片、图片数组或分别设置桌面端和移动端图片
-	
+
 	// 自动媒体轮播配置（自动读取文件夹中的图片和视频）
 	autoMediaCarousel?: {
 		enable: boolean; // 是否启用自动媒体轮播
@@ -486,7 +486,7 @@ export type BackgroundWallpaperConfig = {
 			objectFit?: "cover" | "contain" | "fill"; // 视频填充方式，默认cover
 		};
 	};
-	
+
 	// 手动轮播配置（手动指定文件列表）
 	carousel?: {
 		enable: boolean; // 是否启用轮播
@@ -498,7 +498,7 @@ export type BackgroundWallpaperConfig = {
 		effect?: "fade" | "slide"; // 轮播效果：淡入淡出或滑动，默认fade
 		randomOrder?: boolean; // 是否随机顺序播放，默认false
 	};
-	
+
 	// 单视频背景配置
 	video?: {
 		enable: boolean; // 是否启用视频背景

@@ -1,93 +1,94 @@
 <script lang="ts">
-	import { onMount, onDestroy } from 'svelte';
-	import ImageWrapper from './ImageWrapper.astro';
-	
-	interface Props {
-		images: string[];
-		interval?: number;
-		transition?: number;
-		pauseOnHover?: boolean;
-		showIndicators?: boolean;
-		showControls?: boolean;
-		effect?: 'fade' | 'slide';
-		randomOrder?: boolean;
-		position?: string;
-		class?: string;
+import { onMount, onDestroy } from "svelte";
+import ImageWrapper from "./ImageWrapper.astro";
+
+interface Props {
+	images: string[];
+	interval?: number;
+	transition?: number;
+	pauseOnHover?: boolean;
+	showIndicators?: boolean;
+	showControls?: boolean;
+	effect?: "fade" | "slide";
+	randomOrder?: boolean;
+	position?: string;
+	class?: string;
+}
+
+let {
+	images,
+	interval = 5000,
+	transition: transitionDuration = 1000,
+	pauseOnHover = false,
+	showIndicators = true,
+	showControls = false,
+	effect = "fade",
+	randomOrder = false,
+	position = "center",
+	class: className = "",
+}: Props = $props();
+
+let currentIndex = $state(0);
+let isPaused = $state(false);
+let intervalId: NodeJS.Timeout | null = null;
+let displayImages = $state<string[]>([]);
+
+// 初始化图片顺序
+onMount(() => {
+	if (randomOrder) {
+		displayImages = [...images].sort(() => Math.random() - 0.5);
+	} else {
+		displayImages = [...images];
 	}
-	
-	let {
-		images,
-		interval = 5000,
-		transition: transitionDuration = 1000,
-		pauseOnHover = false,
-		showIndicators = true,
-		showControls = false,
-		effect = 'fade',
-		randomOrder = false,
-		position = 'center',
-		class: className = ''
-	}: Props = $props();
-	
-	let currentIndex = $state(0);
-	let isPaused = $state(false);
-	let intervalId: NodeJS.Timeout | null = null;
-	let displayImages = $state<string[]>([]);
-	
-	// 初始化图片顺序
-	onMount(() => {
-		if (randomOrder) {
-			displayImages = [...images].sort(() => Math.random() - 0.5);
-		} else {
-			displayImages = [...images];
+
+	startCarousel();
+});
+
+onDestroy(() => {
+	stopCarousel();
+});
+
+function startCarousel() {
+	if (displayImages.length <= 1) return;
+
+	intervalId = setInterval(() => {
+		if (!isPaused) {
+			nextSlide();
 		}
-		
-		startCarousel();
-	});
-	
-	onDestroy(() => {
-		stopCarousel();
-	});
-	
-	function startCarousel() {
-		if (displayImages.length <= 1) return;
-		
-		intervalId = setInterval(() => {
-			if (!isPaused) {
-				nextSlide();
-			}
-		}, interval);
+	}, interval);
+}
+
+function stopCarousel() {
+	if (intervalId) {
+		clearInterval(intervalId);
+		intervalId = null;
 	}
-	
-	function stopCarousel() {
-		if (intervalId) {
-			clearInterval(intervalId);
-			intervalId = null;
-		}
+}
+
+function nextSlide() {
+	currentIndex = (currentIndex + 1) % displayImages.length;
+}
+
+function prevSlide() {
+	currentIndex =
+		(currentIndex - 1 + displayImages.length) % displayImages.length;
+}
+
+function goToSlide(index: number) {
+	currentIndex = index;
+}
+
+function handleMouseEnter() {
+	if (pauseOnHover) {
+		isPaused = true;
 	}
-	
-	function nextSlide() {
-		currentIndex = (currentIndex + 1) % displayImages.length;
+}
+
+function handleMouseLeave() {
+	if (pauseOnHover) {
+		isPaused = false;
 	}
-	
-	function prevSlide() {
-		currentIndex = (currentIndex - 1 + displayImages.length) % displayImages.length;
-	}
-	
-	function goToSlide(index: number) {
-		currentIndex = index;
-	}
-	
-	function handleMouseEnter() {
-		if (pauseOnHover) {
-			isPaused = true;
-		}
-	}
-	
-	function handleMouseLeave() {
-		if (pauseOnHover) {
-			isPaused = false;
-		}
-	}
+}
 </script>
 
 <div 

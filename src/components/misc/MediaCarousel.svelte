@@ -1,193 +1,193 @@
 <script lang="ts">
-	import { onMount, onDestroy } from 'svelte';
-	
-	type MediaItem = {
-		type: 'image' | 'video';
-		src: string;
+import { onMount, onDestroy } from "svelte";
+
+type MediaItem = {
+	type: "image" | "video";
+	src: string;
+};
+
+interface Props {
+	items: MediaItem[];
+	interval?: number;
+	transition?: number;
+	pauseOnHover?: boolean;
+	showIndicators?: boolean;
+	showControls?: boolean;
+	effect?: "fade" | "slide";
+	randomOrder?: boolean;
+	position?: string;
+	videoSettings?: {
+		muted?: boolean;
+		loop?: boolean;
+		objectFit?: "cover" | "contain" | "fill";
 	};
-	
-	interface Props {
-		items: MediaItem[];
-		interval?: number;
-		transition?: number;
-		pauseOnHover?: boolean;
-		showIndicators?: boolean;
-		showControls?: boolean;
-		effect?: 'fade' | 'slide';
-		randomOrder?: boolean;
-		position?: string;
-		videoSettings?: {
-			muted?: boolean;
-			loop?: boolean;
-			objectFit?: 'cover' | 'contain' | 'fill';
-		};
-		class?: string;
+	class?: string;
+}
+
+let {
+	items,
+	interval = 5000,
+	transition: transitionDuration = 1000,
+	pauseOnHover = false,
+	showIndicators = true,
+	showControls = false,
+	effect = "fade",
+	randomOrder = false,
+	position = "center",
+	videoSettings = {
+		muted: true,
+		loop: false,
+		objectFit: "cover",
+	},
+	class: className = "",
+}: Props = $props();
+
+let currentIndex = $state(0);
+let isPaused = $state(false);
+let intervalId: NodeJS.Timeout | null = null;
+let displayItems = $state<MediaItem[]>([]);
+let videoElements: HTMLVideoElement[] = [];
+
+// 初始化媒体项顺序
+onMount(() => {
+	if (randomOrder) {
+		displayItems = [...items].sort(() => Math.random() - 0.5);
+	} else {
+		displayItems = [...items];
 	}
-	
-	let {
-		items,
-		interval = 5000,
-		transition: transitionDuration = 1000,
-		pauseOnHover = false,
-		showIndicators = true,
-		showControls = false,
-		effect = 'fade',
-		randomOrder = false,
-		position = 'center',
-		videoSettings = {
-			muted: true,
-			loop: false,
-			objectFit: 'cover'
-		},
-		class: className = ''
-	}: Props = $props();
-	
-	let currentIndex = $state(0);
-	let isPaused = $state(false);
-	let intervalId: NodeJS.Timeout | null = null;
-	let displayItems = $state<MediaItem[]>([]);
-	let videoElements: HTMLVideoElement[] = [];
-	
-	// 初始化媒体项顺序
-	onMount(() => {
-		if (randomOrder) {
-			displayItems = [...items].sort(() => Math.random() - 0.5);
-		} else {
-			displayItems = [...items];
+
+	startCarousel();
+});
+
+onDestroy(() => {
+	stopCarousel();
+	// 清理所有视频
+	videoElements.forEach((video) => {
+		if (video) {
+			video.pause();
+			video.src = "";
 		}
-		
-		startCarousel();
 	});
-	
-	onDestroy(() => {
-		stopCarousel();
-		// 清理所有视频
-		videoElements.forEach(video => {
-			if (video) {
-				video.pause();
-				video.src = '';
-			}
-		});
-	});
-	
-	function startCarousel() {
-		if (displayItems.length <= 1) return;
-		
-		// 如果当前是视频且设置了循环播放，等待视频结束
-		const currentItem = displayItems[currentIndex];
-		if (currentItem?.type === 'video' && !videoSettings.loop) {
-			// 视频会在结束时触发 nextSlide
-			return;
-		}
-		
-		intervalId = setInterval(() => {
-			if (!isPaused) {
-				nextSlide();
-			}
-		}, interval);
+});
+
+function startCarousel() {
+	if (displayItems.length <= 1) return;
+
+	// 如果当前是视频且设置了循环播放，等待视频结束
+	const currentItem = displayItems[currentIndex];
+	if (currentItem?.type === "video" && !videoSettings.loop) {
+		// 视频会在结束时触发 nextSlide
+		return;
 	}
-	
-	function stopCarousel() {
-		if (intervalId) {
-			clearInterval(intervalId);
-			intervalId = null;
-		}
-	}
-	
-	function nextSlide() {
-		// 暂停当前视频
-		const currentVideo = videoElements[currentIndex];
-		if (currentVideo) {
-			currentVideo.pause();
-		}
-		
-		currentIndex = (currentIndex + 1) % displayItems.length;
-		
-		// 重启定时器
-		stopCarousel();
-		startCarousel();
-		
-		// 播放新的视频
-		const nextItem = displayItems[currentIndex];
-		if (nextItem?.type === 'video') {
-			const nextVideo = videoElements[currentIndex];
-			if (nextVideo) {
-				nextVideo.currentTime = 0;
-				nextVideo.play().catch(e => console.warn('Video play failed:', e));
-			}
-		}
-	}
-	
-	function prevSlide() {
-		const currentVideo = videoElements[currentIndex];
-		if (currentVideo) {
-			currentVideo.pause();
-		}
-		
-		currentIndex = (currentIndex - 1 + displayItems.length) % displayItems.length;
-		
-		stopCarousel();
-		startCarousel();
-		
-		const prevItem = displayItems[currentIndex];
-		if (prevItem?.type === 'video') {
-			const prevVideo = videoElements[currentIndex];
-			if (prevVideo) {
-				prevVideo.currentTime = 0;
-				prevVideo.play().catch(e => console.warn('Video play failed:', e));
-			}
-		}
-	}
-	
-	function goToSlide(index: number) {
-		const currentVideo = videoElements[currentIndex];
-		if (currentVideo) {
-			currentVideo.pause();
-		}
-		
-		currentIndex = index;
-		
-		stopCarousel();
-		startCarousel();
-		
-		const item = displayItems[currentIndex];
-		if (item?.type === 'video') {
-			const video = videoElements[currentIndex];
-			if (video) {
-				video.currentTime = 0;
-				video.play().catch(e => console.warn('Video play failed:', e));
-			}
-		}
-	}
-	
-	function handleMouseEnter() {
-		if (pauseOnHover) {
-			isPaused = true;
-		}
-	}
-	
-	function handleMouseLeave() {
-		if (pauseOnHover) {
-			isPaused = false;
-		}
-	}
-	
-	function handleVideoEnded(index: number) {
-		// 如果是当前视频且未设置循环，切换到下一个
-		if (index === currentIndex && !videoSettings.loop) {
+
+	intervalId = setInterval(() => {
+		if (!isPaused) {
 			nextSlide();
 		}
+	}, interval);
+}
+
+function stopCarousel() {
+	if (intervalId) {
+		clearInterval(intervalId);
+		intervalId = null;
 	}
-	
-	function handleVideoLoaded(index: number) {
-		// 视频加载完成后，如果是当前项则自动播放
-		if (index === currentIndex) {
-			const video = videoElements[index];
-			if (video) {
-				video.play().catch(e => console.warn('Video autoplay failed:', e));
-			}
+}
+
+function nextSlide() {
+	// 暂停当前视频
+	const currentVideo = videoElements[currentIndex];
+	if (currentVideo) {
+		currentVideo.pause();
+	}
+
+	currentIndex = (currentIndex + 1) % displayItems.length;
+
+	// 重启定时器
+	stopCarousel();
+	startCarousel();
+
+	// 播放新的视频
+	const nextItem = displayItems[currentIndex];
+	if (nextItem?.type === "video") {
+		const nextVideo = videoElements[currentIndex];
+		if (nextVideo) {
+			nextVideo.currentTime = 0;
+			nextVideo.play().catch((e) => console.warn("Video play failed:", e));
 		}
 	}
+}
+
+function prevSlide() {
+	const currentVideo = videoElements[currentIndex];
+	if (currentVideo) {
+		currentVideo.pause();
+	}
+
+	currentIndex = (currentIndex - 1 + displayItems.length) % displayItems.length;
+
+	stopCarousel();
+	startCarousel();
+
+	const prevItem = displayItems[currentIndex];
+	if (prevItem?.type === "video") {
+		const prevVideo = videoElements[currentIndex];
+		if (prevVideo) {
+			prevVideo.currentTime = 0;
+			prevVideo.play().catch((e) => console.warn("Video play failed:", e));
+		}
+	}
+}
+
+function goToSlide(index: number) {
+	const currentVideo = videoElements[currentIndex];
+	if (currentVideo) {
+		currentVideo.pause();
+	}
+
+	currentIndex = index;
+
+	stopCarousel();
+	startCarousel();
+
+	const item = displayItems[currentIndex];
+	if (item?.type === "video") {
+		const video = videoElements[currentIndex];
+		if (video) {
+			video.currentTime = 0;
+			video.play().catch((e) => console.warn("Video play failed:", e));
+		}
+	}
+}
+
+function handleMouseEnter() {
+	if (pauseOnHover) {
+		isPaused = true;
+	}
+}
+
+function handleMouseLeave() {
+	if (pauseOnHover) {
+		isPaused = false;
+	}
+}
+
+function handleVideoEnded(index: number) {
+	// 如果是当前视频且未设置循环，切换到下一个
+	if (index === currentIndex && !videoSettings.loop) {
+		nextSlide();
+	}
+}
+
+function handleVideoLoaded(index: number) {
+	// 视频加载完成后，如果是当前项则自动播放
+	if (index === currentIndex) {
+		const video = videoElements[index];
+		if (video) {
+			video.play().catch((e) => console.warn("Video autoplay failed:", e));
+		}
+	}
+}
 </script>
 
 <div 

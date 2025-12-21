@@ -30,11 +30,13 @@ export const getBackgroundImages = () => {
 export const isCarouselEnabled = (): boolean => {
 	const carousel = siteConfig.backgroundWallpaper.carousel;
 	if (!carousel) return false;
-	
+
 	const bgImages = getBackgroundImages();
-	const hasMultipleDesktop = Array.isArray(bgImages.desktop) && bgImages.desktop.length > 1;
-	const hasMultipleMobile = Array.isArray(bgImages.mobile) && bgImages.mobile.length > 1;
-	
+	const hasMultipleDesktop =
+		Array.isArray(bgImages.desktop) && bgImages.desktop.length > 1;
+	const hasMultipleMobile =
+		Array.isArray(bgImages.mobile) && bgImages.mobile.length > 1;
+
 	return carousel.enable && (hasMultipleDesktop || hasMultipleMobile);
 };
 
@@ -48,16 +50,18 @@ export const isVideoEnabled = (): boolean => {
 export const getVideoSrc = (isMobile: boolean = false): string => {
 	const video = siteConfig.backgroundWallpaper.video;
 	if (!video || !video.enable) return "";
-	
+
 	const src = video.src;
 	if (typeof src === "string") {
 		return src;
 	}
-	
+
 	if (typeof src === "object") {
-		return isMobile ? (src.mobile || src.desktop || "") : (src.desktop || src.mobile || "");
+		return isMobile
+			? src.mobile || src.desktop || ""
+			: src.desktop || src.mobile || "";
 	}
-	
+
 	return "";
 };
 

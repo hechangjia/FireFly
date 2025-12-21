@@ -23,8 +23,17 @@ import {
 	BANNER_HEIGHT_EXTEND,
 	MAIN_PANEL_OVERLAPS_BANNER_HEIGHT,
 } from "@/constants/constants";
-import { getBackgroundImages, isHomePage, isCarouselEnabled, isVideoEnabled, getVideoSrc } from "@/utils/layout-utils";
-import { getAutoMediaCarouselItems, isAutoMediaCarouselEnabled } from "@/utils/media-utils";
+import {
+	getBackgroundImages,
+	isHomePage,
+	isCarouselEnabled,
+	isVideoEnabled,
+	getVideoSrc,
+} from "@/utils/layout-utils";
+import {
+	getAutoMediaCarouselItems,
+	isAutoMediaCarouselEnabled,
+} from "@/utils/media-utils";
 import type { MediaItem } from "@/utils/media-utils";
 import {
 	generateGridClasses,
@@ -72,7 +81,10 @@ const videoConfig = siteConfig.backgroundWallpaper.video;
 // 检查是否启用自动媒体轮播
 const autoMediaEnabled = isAutoMediaCarouselEnabled();
 const autoMediaConfig = siteConfig.backgroundWallpaper.autoMediaCarousel;
-let autoMediaItems: { desktop: MediaItem[]; mobile: MediaItem[] } = { desktop: [], mobile: [] };
+let autoMediaItems: { desktop: MediaItem[]; mobile: MediaItem[] } = {
+	desktop: [],
+	mobile: [],
+};
 if (autoMediaEnabled) {
 	autoMediaItems = getAutoMediaCarouselItems();
 }

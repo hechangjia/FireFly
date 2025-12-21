@@ -69,14 +69,13 @@ export function getAutoMediaCarouselItems(): {
 		return { desktop: [], mobile: [] };
 	}
 
-	const imageExtensions =
-		autoConfig.imageExtensions || [
-			".webp",
-			".jpg",
-			".jpeg",
-			".png",
-			".gif",
-		];
+	const imageExtensions = autoConfig.imageExtensions || [
+		".webp",
+		".jpg",
+		".jpeg",
+		".png",
+		".gif",
+	];
 	const videoExtensions = autoConfig.videoExtensions || [".mp4", ".webm"];
 
 	const desktop = autoConfig.folders.desktop
