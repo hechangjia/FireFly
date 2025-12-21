@@ -1,5 +1,5 @@
 <script lang="ts">
-import { onMount, onDestroy } from "svelte";
+import { onDestroy, onMount } from "svelte";
 import ImageWrapper from "./ImageWrapper.astro";
 
 interface Props {

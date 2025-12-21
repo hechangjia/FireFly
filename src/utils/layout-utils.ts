@@ -47,7 +47,7 @@ export const isVideoEnabled = (): boolean => {
 };
 
 // 获取视频源
-export const getVideoSrc = (isMobile: boolean = false): string => {
+export const getVideoSrc = (isMobile = false): string => {
 	const video = siteConfig.backgroundWallpaper.video;
 	if (!video || !video.enable) return "";
 
