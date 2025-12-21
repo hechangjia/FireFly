@@ -1,6 +1,6 @@
-import { siteConfig } from "../config";
 import fs from "node:fs";
 import path from "node:path";
+import { siteConfig } from "../config";
 
 export type MediaItem = {
 	type: "image" | "video";
@@ -34,7 +34,7 @@ export function scanMediaFolder(
 		const files = fs.readdirSync(fullPath);
 
 		// 过滤并分类文件
-		const mediaItems: MediaItem[] = files
+		const mediaItems = files
 			.map((file) => {
 				const ext = path.extname(file).toLowerCase();
 				const src = path.join(folderPath, file).replace(/\\/g, "/");
