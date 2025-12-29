@@ -128,12 +128,19 @@ async function generatePoster() {
 		// Initial height estimation, will be adjusted
 		canvas.height = 1000 * scale;
 
-		// 3. Layout Calculation
+		// 3. Layout Calculation - Calculate cover height based on image aspect ratio
 		const contentWidth = width - padding * 2;
 		let currentY = 0;
 
-		// Cover
-		const coverHeight = (coverImage ? 200 : 120) * scale;
+		// Cover - Use image's actual aspect ratio to calculate height
+		let coverHeight: number;
+		if (coverImg && coverImg.width > 0 && coverImg.height > 0) {
+			// Calculate height based on image aspect ratio to fill width completely
+			coverHeight = (width / coverImg.width) * coverImg.height;
+		} else {
+			// Fallback for no image
+			coverHeight = 120 * scale;
+		}
 		currentY += coverHeight;
 		currentY += padding; // Gap after cover
 
@@ -212,33 +219,15 @@ async function generatePoster() {
 			}
 		} catch (e) {}
 
-		// Draw Cover
+		// Draw Cover - Fill completely without cropping or letterboxing
 		if (coverImg) {
-			// Object-fit: cover implementation
-			const imgRatio = coverImg.width / coverImg.height;
-			const targetRatio = width / coverHeight;
-			let sx: number;
-			let sy: number;
-			let sWidth: number;
-			let sHeight: number;
-
-			if (imgRatio > targetRatio) {
-				sHeight = coverImg.height;
-				sWidth = sHeight * targetRatio;
-				sx = (coverImg.width - sWidth) / 2;
-				sy = 0;
-			} else {
-				sWidth = coverImg.width;
-				sHeight = sWidth / targetRatio;
-				sx = 0;
-				sy = (coverImg.height - sHeight) / 2;
-			}
+			// Draw image to fill entire width and calculated height
 			ctx.drawImage(
 				coverImg,
-				sx,
-				sy,
-				sWidth,
-				sHeight,
+				0,
+				0,
+				coverImg.width,
+				coverImg.height,
 				0,
 				0,
 				width,

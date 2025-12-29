@@ -91,8 +91,10 @@ function handleMouseLeave() {
 }
 </script>
 
-<div 
-	class="carousel-container {className}" 
+<div
+	class="carousel-container {className}"
+	role="region"
+	aria-label="Background image carousel"
 	onmouseenter={handleMouseEnter}
 	onmouseleave={handleMouseLeave}
 >

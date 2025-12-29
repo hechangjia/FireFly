@@ -190,8 +190,10 @@ function handleVideoLoaded(index: number) {
 }
 </script>
 
-<div 
-	class="media-carousel-container {className}" 
+<div
+	class="media-carousel-container {className}"
+	role="region"
+	aria-label="Media carousel"
 	onmouseenter={handleMouseEnter}
 	onmouseleave={handleMouseLeave}
 >
