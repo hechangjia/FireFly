@@ -106,13 +106,13 @@ export const siteConfig: SiteConfig = {
 		// 背景图片配置（当未启用自动媒体轮播时使用）
 		src: {
 			desktop: "/assets/images/desktop/1.webp",
-			mobile: "/assets/images/mobile/1.webp",
+			mobile: "/assets/images/mobile/31.webp",
 		},
 
 		// ===== 推荐：自动媒体轮播 =====
 		// 自动读取文件夹中的所有图片和视频进行混合轮播
 		autoMediaCarousel: {
-			enable: true, // 启用自动媒体轮播
+			enable: false, // 启用自动媒体轮播
 			folders: {
 				desktop: "/assets/images/desktop/", // 桌面端媒体文件夹
 				mobile: "/assets/images/mobile/", // 移动端媒体文件夹

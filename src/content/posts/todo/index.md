@@ -10,7 +10,7 @@ category: growth
 slug: growth
 published: 2025-12-19
 licenseName: "MIT"
-draft: false
+draft: true
 ---
 # 主线任务
 
@@ -75,7 +75,7 @@ draft: false
 
 # 支线任务
 
-- [ ] [Pro Git](https://git-scm.com/book/zh/v2)
+- [ ] [Pro Git](https://git-scm.com/book/zh/v2), [Learn Git Branching](https://learngitbranching.js.org/?locale=zh_CN)
 - [ ] [常用 Git 命令清单](https://www.ruanyifeng.com/blog/2015/12/git-cheat-sheet.html)
 - [ ] 数据科学三件套：Numpy，Matplotlib，Pandas
   - [ ] [Numpy](https://numpy-ml.readthedocs.io/)
