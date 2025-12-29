@@ -16,26 +16,26 @@
 &lt;hr /&gt;
 &lt;h2&gt;核心知识体系&lt;/h2&gt;
 &lt;pre&gt;&lt;code&gt;graph TB
-    A[数字信号处理DSP] --&amp;gt; B[离散时间信号与系统]
-    A --&amp;gt; C[Z变换]
-    A --&amp;gt; D[离散傅里叶变换DFT]
-    A --&amp;gt; E[数字滤波器设计]
+    A[&quot;数字信号处理DSP&quot;] --&amp;gt; B[&quot;离散时间信号与系统&quot;]
+    A --&amp;gt; C[&quot;Z变换&quot;]
+    A --&amp;gt; D[&quot;离散傅里叶变换DFT&quot;]
+    A --&amp;gt; E[&quot;数字滤波器设计&quot;]
     
-    B --&amp;gt; B1[基本序列]
-    B --&amp;gt; B2[系统特性]
-    B --&amp;gt; B3[差分方程]
+    B --&amp;gt; B1[&quot;基本序列&quot;]
+    B --&amp;gt; B2[&quot;系统特性&quot;]
+    B --&amp;gt; B3[&quot;差分方程&quot;]
     
-    C --&amp;gt; C1[Z变换定义]
-    C --&amp;gt; C2[收敛域ROC]
-    C --&amp;gt; C3[系统函数]
+    C --&amp;gt; C1[&quot;Z变换定义&quot;]
+    C --&amp;gt; C2[&quot;收敛域ROC&quot;]
+    C --&amp;gt; C3[&quot;系统函数&quot;]
     
-    D --&amp;gt; D1[DFT/IDFT]
-    D --&amp;gt; D2[FFT算法]
-    D --&amp;gt; D3[频谱分析]
+    D --&amp;gt; D1[&quot;DFT/IDFT&quot;]
+    D --&amp;gt; D2[&quot;FFT算法&quot;]
+    D --&amp;gt; D3[&quot;频谱分析&quot;]
     
-    E --&amp;gt; E1[IIR滤波器]
-    E --&amp;gt; E2[FIR滤波器]
-    E --&amp;gt; E3[滤波器设计方法]
+    E --&amp;gt; E1[&quot;IIR滤波器&quot;]
+    E --&amp;gt; E2[&quot;FIR滤波器&quot;]
+    E --&amp;gt; E3[&quot;滤波器设计方法&quot;]
 &lt;/code&gt;&lt;/pre&gt;
 &lt;hr /&gt;
 &lt;h2&gt;65分复习提纲&lt;/h2&gt;
@@ -149,12 +149,12 @@ $$X[k] = \sum_{n=0}^{N-1}x[n]W_N^{kn}$$&lt;/p&gt;
 &lt;h4&gt;5. 数字滤波器基础&lt;/h4&gt;
 &lt;p&gt;&lt;strong&gt;滤波器分类：&lt;/strong&gt;&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;graph LR
-    A[数字滤波器] --&amp;gt; B[IIR滤波器]
-    A --&amp;gt; C[FIR滤波器]
-    B --&amp;gt; B1[无限脉冲响应]
-    B --&amp;gt; B2[有反馈]
-    C --&amp;gt; C1[有限脉冲响应]
-    C --&amp;gt; C2[无反馈]
+    A[&quot;数字滤波器&quot;] --&amp;gt; B[&quot;IIR滤波器&quot;]
+    A --&amp;gt; C[&quot;FIR滤波器&quot;]
+    B --&amp;gt; B1[&quot;无限脉冲响应&quot;]
+    B --&amp;gt; B2[&quot;有反馈&quot;]
+    C --&amp;gt; C1[&quot;有限脉冲响应&quot;]
+    C --&amp;gt; C2[&quot;无反馈&quot;]
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;&lt;strong&gt;IIR滤波器：&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
@@ -195,10 +195,10 @@ $$\sum_{n=0}^{\infty}|h[n]| &amp;lt; \infty$$&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;基本思想&lt;/strong&gt;: 将N点DFT分解为两个N/2点DFT&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;时间抽取(DIT) FFT流程&lt;/strong&gt;:&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;graph LR
-    A[N点DFT] --&amp;gt; B[分解为偶数点和奇数点]
-    B --&amp;gt; C[两个N/2点DFT]
-    C --&amp;gt; D[蝶形运算合并]
-    D --&amp;gt; E[N点DFT结果]
+    A[&quot;N点DFT&quot;] --&amp;gt; B[&quot;分解为偶数点和奇数点&quot;]
+    B --&amp;gt; C[&quot;两个N/2点DFT&quot;]
+    C --&amp;gt; D[&quot;蝶形运算合并&quot;]
+    D --&amp;gt; E[&quot;N点DFT结果&quot;]
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;&lt;strong&gt;计算复杂度&lt;/strong&gt;:&lt;/p&gt;
 &lt;ul&gt;
@@ -657,10 +657,10 @@ $$y_2[n] = \begin{cases} x[n/2] = \cos(\frac{\pi}{8}n), &amp;amp; n \text{ 偶�
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;pre&gt;&lt;code&gt;graph LR
-    A[原信号: ω=π/4] --&amp;gt; B[抽取M=2]
-    A --&amp;gt; C[内插L=2]
-    B --&amp;gt; D[ω=π/2 频率x2]
-    C --&amp;gt; E[ω=π/8 频率÷2]
+    A[&quot;原信号: ω=π/4&quot;] --&amp;gt; B[&quot;抽取M=2&quot;]
+    A --&amp;gt; C[&quot;内插L=2&quot;]
+    B --&amp;gt; D[&quot;ω=π/2 频率x2&quot;]
+    C --&amp;gt; E[&quot;ω=π/8 频率÷2&quot;]
 &lt;/code&gt;&lt;/pre&gt;
 &lt;hr /&gt;
 &lt;h4&gt;题目14: 量化效应分析&lt;/h4&gt;
@@ -713,20 +713,20 @@ $$SQNR \approx 6.02 \times 3 + 1.76 = 19.82 \text{ dB}$$&lt;/p&gt;
 &lt;li&gt;&lt;strong&gt;直接II型结构&lt;/strong&gt;:&lt;/li&gt;
 &lt;/ol&gt;
 &lt;pre&gt;&lt;code&gt;graph LR
-    X[x n] --&amp;gt; A1[+]
-    A1 --&amp;gt; D1[z⁻¹]
-    D1 --&amp;gt; A2[+]
-    A2 --&amp;gt; D2[z⁻¹]
-    D1 --&amp;gt; M1[×0.5]
-    D2 --&amp;gt; M2[×-0.25]
+    X[&quot;x(n)&quot;] --&amp;gt; A1[&quot;+&quot;]
+    A1 --&amp;gt; D1[&quot;z⁻¹&quot;]
+    D1 --&amp;gt; A2[&quot;+&quot;]
+    A2 --&amp;gt; D2[&quot;z⁻¹&quot;]
+    D1 --&amp;gt; M1[&quot;×0.5&quot;]
+    D2 --&amp;gt; M2[&quot;×-0.25&quot;]
     M1 --&amp;gt; A1
     M2 --&amp;gt; A1
-    A1 --&amp;gt; B1[+]
-    D1 --&amp;gt; M3[×2]
-    D2 --&amp;gt; M4[×1]
+    A1 --&amp;gt; B1[&quot;+&quot;]
+    D1 --&amp;gt; M3[&quot;×2&quot;]
+    D2 --&amp;gt; M4[&quot;×1&quot;]
     M3 --&amp;gt; B1
     M4 --&amp;gt; B1
-    B1 --&amp;gt; Y[y n]
+    B1 --&amp;gt; Y[&quot;y(n)&quot;]
 &lt;/code&gt;&lt;/pre&gt;
 &lt;ol&gt;
 &lt;li&gt;
@@ -884,15 +884,15 @@ $$h[n] = h[66-n]$$ (第I类线性相位)&lt;/p&gt;
 &lt;/table&gt;
 &lt;h3&gt;考试答题技巧&lt;/h3&gt;
 &lt;pre&gt;&lt;code&gt;graph TD
-    A[拿到试卷] --&amp;gt; B[浏览全卷5分钟]
-    B --&amp;gt; C{题目难度分类}
-    C --&amp;gt; D[简单题25%]
-    C --&amp;gt; E[中等题50%]
-    C --&amp;gt; F[困难题25%]
-    D --&amp;gt; G[先做简单题30min]
-    G --&amp;gt; H[再做中等题60min]
-    H --&amp;gt; I[最后攻困难题30min]
-    I --&amp;gt; J[检查15min]
+    A[&quot;拿到试卷&quot;] --&amp;gt; B[&quot;浏览全卷5分钟&quot;]
+    B --&amp;gt; C{&quot;题目难度分类&quot;}
+    C --&amp;gt; D[&quot;简单题25%&quot;]
+    C --&amp;gt; E[&quot;中等题50%&quot;]
+    C --&amp;gt; F[&quot;困难题25%&quot;]
+    D --&amp;gt; G[&quot;先做简单题30min&quot;]
+    G --&amp;gt; H[&quot;再做中等题60min&quot;]
+    H --&amp;gt; I[&quot;最后攻困难题30min&quot;]
+    I --&amp;gt; J[&quot;检查15min&quot;]
 &lt;/code&gt;&lt;/pre&gt;
 &lt;h3&gt;各分数段重点&lt;/h3&gt;
 &lt;p&gt;&lt;strong&gt;65分 (及格线)&lt;/strong&gt;:&lt;/p&gt;
