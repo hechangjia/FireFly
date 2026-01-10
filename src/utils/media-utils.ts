@@ -1,6 +1,6 @@
 import fs from "node:fs";
 import path from "node:path";
-import { siteConfig } from "../config";
+import { backgroundWallpaper, siteConfig } from "../config";
 
 export type MediaItem = {
 	type: "image" | "video";
@@ -63,7 +63,7 @@ export function getAutoMediaCarouselItems(): {
 	desktop: MediaItem[];
 	mobile: MediaItem[];
 } {
-	const autoConfig = siteConfig.backgroundWallpaper.autoMediaCarousel;
+	const autoConfig = backgroundWallpaper.banner?.autoMediaCarousel;
 
 	if (!autoConfig?.enable) {
 		return { desktop: [], mobile: [] };
@@ -106,7 +106,7 @@ export function getAutoMediaCarouselItems(): {
  * 检查是否启用自动媒体轮播
  */
 export function isAutoMediaCarouselEnabled(): boolean {
-	const autoConfig = siteConfig.backgroundWallpaper.autoMediaCarousel;
+	const autoConfig = backgroundWallpaper.banner?.autoMediaCarousel;
 	if (!autoConfig?.enable) return false;
 
 	const items = getAutoMediaCarouselItems();
