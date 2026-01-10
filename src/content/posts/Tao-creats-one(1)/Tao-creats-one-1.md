@@ -8,7 +8,7 @@ pinned: false
 tags: [series, taoism, generalization]
 category: ai
 slug: tao-creats-one-1
-published: 
+published: 2026-01-10
 licenseName: "MIT"
 draft: true
 ---
