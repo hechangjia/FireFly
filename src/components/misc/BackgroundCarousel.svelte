@@ -1,6 +1,6 @@
 <script lang="ts">
 import { onDestroy, onMount } from "svelte";
-import ImageWrapper from "./ImageWrapper.astro";
+import ImageWrapper from "@/components/common/ImageWrapper.astro";
 
 interface Props {
 	images: string[];
