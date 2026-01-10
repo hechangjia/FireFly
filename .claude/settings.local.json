@@ -2,7 +2,12 @@
   "permissions": {
     "allow": [
       "Bash(git rm:*)",
-      "Bash(git add:*)"
+      "Bash(git add:*)",
+      "Bash(git commit -m \"$\\(cat <<''EOF''\n合并 upstream/master 的新特性，保留本地配置和内容\n\n主要变更：\n✅ 合并 upstream 的组件重构（components 目录结构优化）\n✅ 合并新增的 backgroundWallpaper 配置系统\n✅ 合并 MediaCarousel 和 VideoBackground 等新功能\n✅ 合并三列网格布局等新特性  \n✅ 保留本地的用户配置（profile, music, comment等）\n✅ 保留本地的博客文章内容\n✅ 更新文章为 draft: false 并使用新的封面图路径\n\n冲突解决策略：\n- MainGridLayout.astro: 完整合并 upstream 的媒体轮播功能\n- 配置文件: 保留用户的个性化配置\n- 内容文件: 使用当前日期，启用文章，使用新封面图\n\nCo-Authored-By: Claude Sonnet 4.5 <noreply@anthropic.com>\nEOF\n\\)\")",
+      "Bash(git commit:*)",
+      "Bash(curl:*)",
+      "Bash(pkill:*)",
+      "Bash(pnpm check:*)"
     ]
   }
 }
