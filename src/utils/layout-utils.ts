@@ -28,7 +28,7 @@ export const getBackgroundImages = () => {
 
 // 检查是否启用轮播
 export const isCarouselEnabled = (): boolean => {
-	const carousel = backgroundWallpaper.banner?.carousel;
+	const carousel = backgroundWallpaper.carousel;
 	if (!carousel) return false;
 
 	const bgImages = getBackgroundImages();
@@ -42,13 +42,13 @@ export const isCarouselEnabled = (): boolean => {
 
 // 检查是否启用视频背景
 export const isVideoEnabled = (): boolean => {
-	const video = backgroundWallpaper.banner?.video;
+	const video = backgroundWallpaper.video;
 	return video?.enable ?? false;
 };
 
 // 获取视频源
 export const getVideoSrc = (isMobile = false): string => {
-	const video = backgroundWallpaper.banner?.video;
+	const video = backgroundWallpaper.video;
 	if (!video || !video.enable) return "";
 
 	const src = video.src;

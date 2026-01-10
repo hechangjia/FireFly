@@ -63,7 +63,7 @@ export function getAutoMediaCarouselItems(): {
 	desktop: MediaItem[];
 	mobile: MediaItem[];
 } {
-	const autoConfig = backgroundWallpaper.banner?.autoMediaCarousel;
+	const autoConfig = backgroundWallpaper.autoMediaCarousel;
 
 	if (!autoConfig?.enable) {
 		return { desktop: [], mobile: [] };
@@ -106,7 +106,7 @@ export function getAutoMediaCarouselItems(): {
  * 检查是否启用自动媒体轮播
  */
 export function isAutoMediaCarouselEnabled(): boolean {
-	const autoConfig = backgroundWallpaper.banner?.autoMediaCarousel;
+	const autoConfig = backgroundWallpaper.autoMediaCarousel;
 	if (!autoConfig?.enable) return false;
 
 	const items = getAutoMediaCarouselItems();
