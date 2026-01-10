@@ -6,7 +6,14 @@ export const ru: Translation = {
 	[Key.about]: "О нас",
 	[Key.archive]: "Архив",
 	[Key.search]: "Поиск",
+	[Key.searchNoResults]: "Результаты не найдены.",
+	[Key.searchTypeSomething]: "Введите ключевое слово для поиска...",
+	[Key.searchLoading]: "Поиск...",
+	[Key.searchSummary]: "Резюме",
+	[Key.searchContent]: "Содержание",
+	[Key.searchViewMore]: "Показать еще ({count} шт)",
 	[Key.other]: "Прочее",
+	[Key.all]: "Все",
 
 	[Key.tags]: "Теги",
 	[Key.categories]: "Категории",
@@ -197,6 +204,10 @@ export const ru: Translation = {
 	[Key.sponsorButtonText]:
 		"Если эта статья помогла вам, пожалуйста, поделитесь или поддержите!",
 
+	[Key.shareOnSocial]: "Поделиться статьей",
+	[Key.shareOnSocialDescription]:
+		"Если эта статья помогла вам, пожалуйста, поделитесь ею с другими!",
+
 	// Статистика сайта
 	[Key.siteStats]: "Статистика сайта",
 	[Key.siteStatsPostCount]: "Статьи",
@@ -207,6 +218,7 @@ export const ru: Translation = {
 	[Key.siteStatsLastUpdate]: "Последняя активность",
 	[Key.siteStatsDaysAgo]: "{days} дней назад",
 	[Key.siteStatsDays]: "{days} дней",
+	[Key.today]: "Сегодня",
 
 	// Компонент календаря
 	[Key.calendarSunday]: "Вс",

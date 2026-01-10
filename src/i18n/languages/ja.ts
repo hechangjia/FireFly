@@ -6,7 +6,14 @@ export const ja: Translation = {
 	[Key.about]: "について",
 	[Key.archive]: "アーカイブ",
 	[Key.search]: "検索",
+	[Key.searchNoResults]: "結果が見つかりません。",
+	[Key.searchTypeSomething]: "検索キーワードを入力してください。",
+	[Key.searchLoading]: "検索中...",
+	[Key.searchSummary]: "摘要",
+	[Key.searchContent]: "内容",
+	[Key.searchViewMore]: "さらに結果を表示 ({count} 件)",
 	[Key.other]: "その他",
+	[Key.all]: "すべて",
 
 	[Key.tags]: "タグ",
 	[Key.categories]: "カテゴリ",
@@ -195,6 +202,10 @@ export const ja: Translation = {
 	[Key.sponsorButtonText]:
 		"この記事が役に立ったなら、共有またはサポートをお願いします！",
 
+	[Key.shareOnSocial]: "記事を共有",
+	[Key.shareOnSocialDescription]:
+		"この記事が役に立ったなら、ぜひ他の人と共有してください！",
+
 	// サイト統計
 	[Key.siteStats]: "サイト統計",
 	[Key.siteStatsPostCount]: "記事",
@@ -205,6 +216,7 @@ export const ja: Translation = {
 	[Key.siteStatsLastUpdate]: "最終活動",
 	[Key.siteStatsDaysAgo]: "{days} 日前",
 	[Key.siteStatsDays]: "{days} 日",
+	[Key.today]: "今日",
 
 	// カレンダーコンポーネント
 	[Key.calendarSunday]: "日",
@@ -227,7 +239,7 @@ export const ja: Translation = {
 	[Key.calendarNovember]: "11月",
 	[Key.calendarDecember]: "12月",
 
-	[Key.shareArticle]: "共有する",
+	[Key.shareArticle]: "共有",
 	[Key.generatingPoster]: "ポスター生成中...",
 	[Key.copied]: "コピーしました",
 	[Key.copyLink]: "リンクをコピー",

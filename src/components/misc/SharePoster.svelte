@@ -12,7 +12,6 @@ export let pubDate: string;
 export let coverImage: string | null = null;
 export let url: string;
 export let siteTitle: string;
-export const category: string | undefined = undefined;
 export let avatar: string | null = null;
 
 let showModal = false;
@@ -34,18 +33,24 @@ onMount(() => {
 	}
 });
 
-function loadImage(src: string): Promise<HTMLImageElement> {
+function loadImage(src: string): Promise<HTMLImageElement | null> {
 	return new Promise((resolve) => {
 		const img = new Image();
 		img.crossOrigin = "anonymous";
 		img.onload = () => resolve(img);
 		img.onerror = () => {
-			console.warn(`Failed to load image: ${src}`);
-			// Return a 1x1 transparent image to prevent crash
-			const fallback = new Image();
-			fallback.src =
-				"data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7";
-			fallback.onload = () => resolve(fallback);
+			if (!src.includes("images.weserv.nl")) {
+				const proxyUrl = `https://images.weserv.nl/?url=${encodeURIComponent(src)}&output=png`;
+				const proxyImg = new Image();
+				proxyImg.crossOrigin = "anonymous";
+				proxyImg.onload = () => resolve(proxyImg);
+				proxyImg.onerror = () => {
+					resolve(null);
+				};
+				proxyImg.src = proxyUrl;
+			} else {
+				resolve(null);
+			}
 		};
 		img.src = src;
 	});
@@ -397,13 +402,15 @@ async function generatePoster() {
 		// Draw QR
 		const qrInnerSize = 56 * scale;
 		const qrPadding = (qrSize - qrInnerSize) / 2;
-		ctx.drawImage(
-			qrImg,
-			qrX + qrPadding,
-			footerY + qrPadding,
-			qrInnerSize,
-			qrInnerSize,
-		);
+		if (qrImg) {
+			ctx.drawImage(
+				qrImg,
+				qrX + qrPadding,
+				footerY + qrPadding,
+				qrInnerSize,
+				qrInnerSize,
+			);
+		}
 
 		// Site Info (Left of QR)
 		const siteInfoX = qrX - 16 * scale;
@@ -462,7 +469,7 @@ function portal(node: HTMLElement) {
 
 <!-- Trigger Button -->
 <button 
-  class="inline-flex items-center gap-2 px-6 py-3 bg-white dark:bg-black/5 text-[var(--primary)] rounded-lg font-medium hover:bg-[var(--primary)]/10 hover:scale-105 active:scale-95 transition-all whitespace-nowrap border border-[var(--primary)]/20"
+  class="btn-regular rounded-lg h-12 px-6 gap-2 hover:scale-105 active:scale-95 whitespace-nowrap"
   on:click={generatePoster}
   aria-label="Generate Share Poster"
 >

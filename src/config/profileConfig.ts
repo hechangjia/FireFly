@@ -3,8 +3,10 @@ import type { ProfileConfig } from "../types/config";
 export const profileConfig: ProfileConfig = {
 	// 头像
 	avatar: "/assets/images/avatar.webp",
+
 	// 名字
 	name: "Chia",
+
 	// 个人签名
 	bio: "Hello,I'm Chia. My MBTI is INFP",
 
