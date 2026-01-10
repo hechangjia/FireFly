@@ -79,12 +79,12 @@ const isWallpaperSwitchable = backgroundWallpaper.switchable ?? true;
 // 检查是否启用轮播和视频
 const carouselEnabled = isCarouselEnabled();
 const videoEnabled = isVideoEnabled();
-const carouselConfig = siteConfig.backgroundWallpaper.carousel;
-const videoConfig = siteConfig.backgroundWallpaper.video;
+const carouselConfig = backgroundWallpaper.banner?.carousel;
+const videoConfig = backgroundWallpaper.banner?.video;
 
 // 检查是否启用自动媒体轮播
 const autoMediaEnabled = isAutoMediaCarouselEnabled();
-const autoMediaConfig = siteConfig.backgroundWallpaper.autoMediaCarousel;
+const autoMediaConfig = backgroundWallpaper.banner?.autoMediaCarousel;
 let autoMediaItems: { desktop: MediaItem[]; mobile: MediaItem[] } = {
 	desktop: [],
 	mobile: [],
