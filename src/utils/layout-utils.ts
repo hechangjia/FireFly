@@ -1,4 +1,4 @@
-import { backgroundWallpaper } from "../config";
+import { backgroundWallpaper, siteConfig } from "../config";
 
 // 背景图片处理工具函数
 export const getBackgroundImages = () => {
