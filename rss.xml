@@ -1,4 +1,12 @@
-<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>小镇错题嘉</title><description>中国式的西西弗斯</description><link>https://firefly.662613.xyz/</link><language>en</language><templateTheme>Firefly</templateTheme><templateThemeVersion>6.3.7</templateThemeVersion><templateThemeUrl>https://github.com/CuteLeaf/Firefly</templateThemeUrl><lastBuildDate>January 13, 2026 at 07:49:59 AM</lastBuildDate><item><title>Eureka</title><link>https://firefly.662613.xyz/posts/eureka/</link><guid isPermaLink="true">https://firefly.662613.xyz/posts/eureka/</guid><description>记录自己灵光一现的想法与主意，做出一些自己的思考。</description><pubDate>Tue, 13 Jan 2026 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;&amp;lt;img src=&quot;https://images.662613.xyz/file/blog/eureka/cover.webp&quot; width = &quot;250&quot; height = &quot;250&quot; alt=&quot;Firefly&quot; align=right /&amp;gt;
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>小镇错题嘉</title><description>中国式的西西弗斯</description><link>https://firefly.662613.xyz/</link><language>en</language><templateTheme>Firefly</templateTheme><templateThemeVersion>6.3.7</templateThemeVersion><templateThemeUrl>https://github.com/CuteLeaf/Firefly</templateThemeUrl><lastBuildDate>January 13, 2026 at 11:02:24 AM</lastBuildDate><item><title>实用软件分享。</title><link>https://firefly.662613.xyz/posts/app_share/</link><guid isPermaLink="true">https://firefly.662613.xyz/posts/app_share/</guid><description>分享一些自己日常使用的软件。</description><pubDate>Tue, 13 Jan 2026 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;&amp;lt;img src=&quot;https://images.662613.xyz/file/blog/app_share/MacApp.webp&quot; width = &quot;270&quot; height = &quot;300&quot; alt=&quot;MacApp&quot; align=right /&amp;gt;
+&amp;lt;img src=&quot;https://images.662613.xyz/file/blog/1.webp&quot; width = &quot;440&quot; height = &quot;220&quot; alt=&quot;Beauty&quot; align=bottom /&amp;gt;&lt;/p&gt;
+&lt;p&gt;&amp;lt;div style=&quot;text-align: center;&quot;&amp;gt;
+&amp;lt;ul style=&quot;display: inline-block; text-align: left;&quot;&amp;gt;
+&amp;lt;li&amp;gt;&amp;lt;a href=&quot;/posts/fileconverter/&quot;&amp;gt;fileconverter(&lt;em&gt;两步点击快速实现文件转换&lt;/em&gt;)&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;
+&amp;lt;li&amp;gt;&amp;lt;a href=&quot;/posts/gkd/&quot;&amp;gt;gkd(不是消除广告，而是无感快速自动点击广告)&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;
+&amp;lt;/ul&amp;gt;
+&amp;lt;/div&amp;gt;&lt;/p&gt;
+</content:encoded><author>贺昌嘉</author></item><item><title>Eureka</title><link>https://firefly.662613.xyz/posts/eureka/</link><guid isPermaLink="true">https://firefly.662613.xyz/posts/eureka/</guid><description>记录自己灵光一现的想法与主意，做出一些自己的思考。</description><pubDate>Tue, 13 Jan 2026 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;&amp;lt;img src=&quot;https://images.662613.xyz/file/blog/eureka/cover.webp&quot; width = &quot;250&quot; height = &quot;250&quot; alt=&quot;Firefly&quot; align=right /&amp;gt;
 &amp;lt;img src=&quot;https://images.662613.xyz/file/blog/1.webp&quot; width = &quot;440&quot; height = &quot;220&quot; alt=&quot;Firefly&quot; align=bottom /&amp;gt;&lt;/p&gt;
 &lt;p&gt;&amp;lt;div style=&quot;text-align: center;&quot;&amp;gt;
 &amp;lt;ul style=&quot;display: inline-block; text-align: left;&quot;&amp;gt;
@@ -130,4 +138,55 @@
 &lt;h2&gt;运动&lt;/h2&gt;
 &lt;h1&gt;任务进度&lt;/h1&gt;
 &lt;h1&gt;里程碑&lt;/h1&gt;
-</content:encoded><author>BruceChia</author></item></channel></rss>
+</content:encoded><author>BruceChia</author></item><item><title>fileconverter</title><link>https://firefly.662613.xyz/posts/fileconverter/</link><guid isPermaLink="true">https://firefly.662613.xyz/posts/fileconverter/</guid><description>File Converter is a very simple tool which allows you to convert and compress files using the context menu in windows explorer.</description><pubDate>Tue, 13 Jan 2026 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;&amp;lt;img src=&quot;https://images.662613.xyz/file/blog/app_share/MacApp.webp&quot; width = &quot;270&quot; height = &quot;300&quot; alt=&quot;MacApp&quot; align=right /&amp;gt;
+&amp;lt;img src=&quot;https://images.662613.xyz/file/blog/1.webp&quot; width = &quot;440&quot; height = &quot;220&quot; alt=&quot;Beauty&quot; align=bottom /&amp;gt;&lt;/p&gt;
+&lt;p&gt;&amp;lt;div align=&quot;center&quot;&amp;gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;[!Note]+ &lt;strong&gt;项目地址&lt;/strong&gt;
+&lt;a href=&quot;https://github.com/Tichau/FileConverter/tree/integration&quot;&gt;fileconverter&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;::github{repo=&quot;Tichau/FileConverter&quot;}&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;[!tip]+ 使用方法
+&lt;strong&gt;Convert &amp;amp; compress everything in 2 clicks!&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;两步点击就可以快速实现文件的转换。:spoiler[&lt;strong&gt;傻瓜式使用😵‍💫&lt;/strong&gt;]&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://images.662613.xyz/file/blog/app_share/fileconverter/FileConverterUsage.gif&quot; alt=&quot;演示Usage&quot; /&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;[!tip]+ 支持转换的类型
+常见格式基本都能够互相转换。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://images.662613.xyz/file/blog/app_share/fileconverter/CompatibleFileFormats.svg&quot; alt=&quot;类型Formats&quot; /&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&amp;lt;/div&amp;gt;&lt;/p&gt;
+</content:encoded><author>贺昌嘉</author></item><item><title>gkd</title><link>https://firefly.662613.xyz/posts/gkd/</link><guid isPermaLink="true">https://firefly.662613.xyz/posts/gkd/</guid><description>GKD 是一款基于无障碍，高级选择器，订阅规则的自定义屏幕点击 Android 应用</description><pubDate>Tue, 13 Jan 2026 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;&amp;lt;img src=&quot;https://images.662613.xyz/file/blog/app_share/MacApp.webp&quot; width = &quot;270&quot; height = &quot;300&quot; alt=&quot;MacApp&quot; align=right /&amp;gt;
+&amp;lt;img src=&quot;https://images.662613.xyz/file/blog/1.webp&quot; width = &quot;440&quot; height = &quot;220&quot; alt=&quot;Beauty&quot; align=bottom /&amp;gt;&lt;/p&gt;
+&lt;p&gt;&amp;lt;div align=&quot;center&quot;&amp;gt;&lt;/p&gt;
+&lt;h1&gt;个人使用体验&lt;/h1&gt;
+&lt;p&gt;&amp;lt;div style=&quot;display: flex; justify-content: space-between; gap: 10px; margin-bottom: 20px;&quot;&amp;gt;
+&amp;lt;img src=&quot;https://images.662613.xyz/file/blog/app_share/gkd/gkd_bili.webp&quot; alt=&quot;图1&quot; style=&quot;flex: 1; width: 30%; height: auto; border-radius: 6px; object-fit: contain;&quot;&amp;gt;
+&amp;lt;img src=&quot;https://images.662613.xyz/file/blog/app_share/gkd/gkd_jingdong.webp&quot; alt=&quot;图2&quot; style=&quot;flex: 1; width: 30%; height: auto; border-radius: 6px; object-fit: contain;&quot;&amp;gt;
+&amp;lt;img src=&quot;https://images.662613.xyz/file/blog/app_share/gkd/gkd_zhihu.webp&quot; alt=&quot;图3&quot; style=&quot;flex: 1; width: 30%; height: auto; border-radius: 6px; object-fit: contain;&quot;&amp;gt;
+&amp;lt;/div&amp;gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;[!Bug]+ 吐槽
+有些时候会把一些登录，确认按钮也当成广告直接跳过，这是有些恼人了。😡&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;[!Note]+ 项目地址
+&lt;a href=&quot;https://github.com/gkd-kit/gkd&quot;&gt;gkd&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;::github{repo=&quot;gkd-kit/gkd&quot;}&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;[!Caution]+ 使用须知
+&lt;strong&gt;需要用户手动授予无障碍权限&lt;/strong&gt;，因为GKD 需要识别屏幕的内容快速点击广告。&lt;/p&gt;
+&lt;p&gt;请谨慎使用。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1&gt;GKD 订阅规则分享&lt;/h1&gt;
+&lt;p&gt;::github{repo=&quot;AIsouler/GKD_subscription&quot;}&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;[!success]+ 订阅规则分享
+&lt;a href=&quot;https://registry.npmmirror.com/@aisouler/gkd_subscription/latest/files/dist/AIsouler_gkd.json5&quot;&gt;大陆用户使用&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://raw.githubusercontent.com/AIsouler/GKD_subscription/main/dist/AIsouler_gkd.json5&quot;&gt;Github源&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&amp;lt;/div&amp;gt;&lt;/p&gt;
+</content:encoded><author>贺昌嘉</author></item></channel></rss>
