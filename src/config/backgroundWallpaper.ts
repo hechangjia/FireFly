@@ -8,9 +8,9 @@ export const backgroundWallpaper: BackgroundWallpaperConfig = {
 	// 背景图片配置
 	src: {
 		// 桌面背景图片
-		desktop: "/assets/images/d1.webp",
+		desktop: "/assets/images/desktop/1.webp",
 		// 移动背景图片
-		mobile: "/assets/images/m1.webp",
+		mobile: "/assets/images/mobile/31.webp",
 	},
 	// Banner模式特有配置
 	banner: {
@@ -22,7 +22,7 @@ export const backgroundWallpaper: BackgroundWallpaperConfig = {
 		// 主页横幅文字
 		homeText: {
 			// 是否启用主页横幅文字
-			enable: true,
+			enable: false,
 			// 主页横幅主标题
 			title: "Lovely firefly!",
 			// 主页横幅主标题字体大小
@@ -52,26 +52,26 @@ export const backgroundWallpaper: BackgroundWallpaperConfig = {
 			},
 		},
 		// 图片来源
-		credit: {
-			enable: {
-				// 桌面端显示横幅图片来源文本
-				desktop: true,
-				// 移动端显示横幅图片来源文本
-				mobile: true,
-			},
-			text: {
-				// 桌面端要显示的来源文本
-				desktop: "Pixiv - 晚晚喵",
-				// 移动端要显示的来源文本
-				mobile: "Pixiv - KiraraShss",
-			},
-			url: {
-				// 桌面端原始艺术品或艺术家页面的 URL 链接
-				desktop: "https://www.pixiv.net/artworks/135490046",
-				// 移动端原始艺术品或艺术家页面的 URL 链接
-				mobile: "https://www.pixiv.net/users/42715864",
-			},
-		},
+		// credit: {
+		// 	enable: {
+		// 		// 桌面端显示横幅图片来源文本
+		// 		desktop: true,
+		// 		// 移动端显示横幅图片来源文本
+		// 		mobile: true,
+		// 	},
+		// 	text: {
+		// 		// 桌面端要显示的来源文本
+		// 		desktop: "Pixiv - 晚晚喵",
+		// 		// 移动端要显示的来源文本
+		// 		mobile: "Pixiv - KiraraShss",
+		// 	},
+		// 	url: {
+		// 		// 桌面端原始艺术品或艺术家页面的 URL 链接
+		// 		desktop: "https://www.pixiv.net/artworks/135490046",
+		// 		// 移动端原始艺术品或艺术家页面的 URL 链接
+		// 		mobile: "https://www.pixiv.net/users/42715864",
+		// 	},
+		// },
 		// 横幅导航栏配置
 		navbar: {
 			// 横幅导航栏透明模式："semi" 半透明加圆角，"full" 完全透明，"semifull" 动态透明

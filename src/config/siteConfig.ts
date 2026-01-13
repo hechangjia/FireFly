@@ -72,7 +72,7 @@ export const siteConfig: SiteConfig = {
 		// 全宽导航栏，导航栏是否占满屏幕宽度，true：占满，false：不占满
 		widthFull: false,
 		// 导航栏图标和标题是否跟随主题色
-		followTheme: false,
+		followTheme: true,
 	},
 
 	// 站点开始日期，用于统计运行天数
@@ -126,20 +126,20 @@ export const siteConfig: SiteConfig = {
 			// 网格模式列数：2 或 3
 			// 2列是默认模式，在任何侧边栏配置下均可生效
 			// 3列模式仅在单侧边栏（或无侧边栏）时生效，
-			columns: 3,
+			columns: 2,
 		},
 	},
 
 	// 分页配置
 	pagination: {
 		// 每页显示的文章数量
-		postsPerPage: 4,
+		postsPerPage: 5,
 	},
 
 	// 统计分析
 	analytics: {
 		// Google Analytics ID
-		googleAnalyticsId: "",
+		googleAnalyticsId: "494038104",
 		// Microsoft Clarity ID
 		microsoftClarityId: "",
 	},
