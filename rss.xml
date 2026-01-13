@@ -1,4 +1,31 @@
-<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>小镇错题嘉</title><description>中国式的西西弗斯</description><link>https://firefly.662613.xyz/</link><language>en</language><templateTheme>Firefly</templateTheme><templateThemeVersion>6.3.7</templateThemeVersion><templateThemeUrl>https://github.com/CuteLeaf/Firefly</templateThemeUrl><lastBuildDate>January 13, 2026 at 05:27:57 AM</lastBuildDate><item><title>学习主线任务</title><link>https://firefly.662613.xyz/posts/growth/</link><guid isPermaLink="true">https://firefly.662613.xyz/posts/growth/</guid><description>一路过关斩将，斩小怪，打Boss，无限进步。</description><pubDate>Fri, 19 Dec 2025 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;主线任务&lt;/h1&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>小镇错题嘉</title><description>中国式的西西弗斯</description><link>https://firefly.662613.xyz/</link><language>en</language><templateTheme>Firefly</templateTheme><templateThemeVersion>6.3.7</templateThemeVersion><templateThemeUrl>https://github.com/CuteLeaf/Firefly</templateThemeUrl><lastBuildDate>January 13, 2026 at 07:02:40 AM</lastBuildDate><item><title>Eureka</title><link>https://firefly.662613.xyz/posts/eureka/</link><guid isPermaLink="true">https://firefly.662613.xyz/posts/eureka/</guid><description>记录自己灵光一现的想法与主意，做出一些自己的思考。</description><pubDate>Tue, 13 Jan 2026 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;&amp;lt;img src=&quot;https://moderation.xin/file/blog/cover.webp&quot; width = &quot;250&quot; height = &quot;250&quot; alt=&quot;Firefly&quot; align=right /&amp;gt;
+&amp;lt;img src=&quot;https://moderation.xin/file/blog/1.webp&quot; width = &quot;440&quot; height = &quot;220&quot; alt=&quot;Firefly&quot; align=bottom /&amp;gt;&lt;/p&gt;
+&lt;p&gt;&amp;lt;div style=&quot;text-align: center;&quot;&amp;gt;
+&amp;lt;ul style=&quot;display: inline-block; text-align: left;&quot;&amp;gt;
+&amp;lt;li&amp;gt;&amp;lt;a href=&quot;/posts/thinking_0/&quot;&amp;gt;机器学习的核心问题是泛化能力(Generalization)&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;
+&amp;lt;li&amp;gt;&amp;lt;a href=&quot;/posts/thinking_1/&quot;&amp;gt;NFL:无免费午餐定理与奥卡姆剃刀&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;
+&amp;lt;/ul&amp;gt;
+&amp;lt;/div&amp;gt;&lt;/p&gt;
+&lt;p&gt;&amp;lt;div align=&quot;center&quot;&amp;gt;&lt;/p&gt;
+&lt;h1&gt;Eureka 的由来&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;p&gt;[!note]+ Eureka
+&lt;strong&gt;尤里卡&lt;/strong&gt;，&lt;strong&gt;直译：&lt;/strong&gt; &lt;em&gt;我找到了！&lt;/em&gt;。&lt;/p&gt;
+&lt;p&gt;一个源自希腊用以表达发现某件事物、真相时的感叹词。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Eureka_(word)&quot;&gt;阿基米德原理的发现&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1&gt;我的Eureka 篇章&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;p&gt;[!success]+ Eureka&lt;/p&gt;
+&lt;p&gt;及时记录自己的Eureka时刻，以及一些有趣的Ideas。&lt;/p&gt;
+&lt;p&gt;或许有一天会实现，或许不会，但那又怎样！&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;[!quote]+ 笛卡尔
+我思故我在。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&amp;lt;/div&amp;gt;&lt;/p&gt;
+</content:encoded><author>贺昌嘉</author></item><item><title>学习主线任务</title><link>https://firefly.662613.xyz/posts/growth/</link><guid isPermaLink="true">https://firefly.662613.xyz/posts/growth/</guid><description>一路过关斩将，斩小怪，打Boss，无限进步。</description><pubDate>Fri, 19 Dec 2025 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;主线任务&lt;/h1&gt;
 &lt;h2&gt;AI&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;[ ] &lt;a href=&quot;https://github.com/Visualize-ML/Book7_Visualizations-for-Machine-Learning&quot;&gt;鸢尾花书《机器学习》&lt;/a&gt;&lt;/li&gt;
