@@ -3,7 +3,7 @@ author: 贺昌嘉
 title: Eureka
 date: 2026-01-13
 description: 记录自己灵光一现的想法与主意，做出一些自己的思考。
-image: https://moderation.xin/file/2025/eureka.webp
+image: https://images.662613.xyz/file/blog/eureka/eureka.webp
 pinned: true
 tags: [eureka, thinking, idea]
 category: thinking
@@ -12,8 +12,8 @@ licenseName: "MIT"
 draft: false
 ---
 
-<img src="https://moderation.xin/file/blog/cover.webp" width = "250" height = "250" alt="Firefly" align=right />
-<img src="https://moderation.xin/file/blog/1.webp" width = "440" height = "220" alt="Firefly" align=bottom />
+<img src="https://images.662613.xyz/file/blog/eureka/cover.webp" width = "250" height = "250" alt="Firefly" align=right />
+<img src="https://images.662613.xyz/file/blog/1.webp" width = "440" height = "220" alt="Firefly" align=bottom />
 
 <div style="text-align: center;">
     <ul style="display: inline-block; text-align: left;">
