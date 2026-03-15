@@ -1,0 +1,479 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" width="1200" height="900">
+  <defs>
+    <!-- 渐变定义 -->
+    <linearGradient id="greenGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#22c55e;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#16a34a;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="orangeGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#f97316;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#ea580c;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="blueGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#3b82f6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#2563eb;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="purpleGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#a855f7;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#7c3aed;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="tealGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#42b883;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#35495e;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="skyGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#0ea5e9;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0284c7;stop-opacity:1" />
+    </linearGradient>
+
+    <!-- 箭头标记 -->
+    <marker id="arrowGreen" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#22c55e"/>
+    </marker>
+    <marker id="arrowOrange" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#f97316"/>
+    </marker>
+    <marker id="arrowBlue" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#3b82f6"/>
+    </marker>
+    <marker id="arrowPurple" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#a855f7"/>
+    </marker>
+    <marker id="arrowTeal" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#42b883"/>
+    </marker>
+    <marker id="arrowSky" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#0ea5e9"/>
+    </marker>
+  </defs>
+
+  <style>
+    .flow-line-green {
+      stroke-dasharray: 8, 4;
+      animation: dash-flow-green 0.5s linear infinite;
+    }
+    @keyframes dash-flow-green {
+      to { stroke-dashoffset: -12; }
+    }
+    .flow-line-orange {
+      stroke-dasharray: 8, 4;
+      animation: dash-flow-orange 0.5s linear infinite;
+    }
+    @keyframes dash-flow-orange {
+      to { stroke-dashoffset: -12; }
+    }
+    .flow-line-blue {
+      stroke-dasharray: 8, 4;
+      animation: dash-flow-blue 0.5s linear infinite;
+    }
+    @keyframes dash-flow-blue {
+      to { stroke-dashoffset: -12; }
+    }
+    .flow-line-purple {
+      stroke-dasharray: 8, 4;
+      animation: dash-flow-purple 0.5s linear infinite;
+    }
+    @keyframes dash-flow-purple {
+      to { stroke-dashoffset: -12; }
+    }
+    .flow-line-teal {
+      stroke-dasharray: 8, 4;
+      animation: dash-flow-teal 0.5s linear infinite;
+    }
+    @keyframes dash-flow-teal {
+      to { stroke-dashoffset: -12; }
+    }
+    .flow-line-sky {
+      stroke-dasharray: 8, 4;
+      animation: dash-flow-sky 0.5s linear infinite;
+    }
+    @keyframes dash-flow-sky {
+      to { stroke-dashoffset: -12; }
+    }
+  </style>
+
+  <!-- 白色背景 -->
+  <rect width="1200" height="900" fill="#ffffff"/>
+
+  <!-- 网格背景 -->
+  <g opacity="0.08">
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#94a3b8" stroke-width="0.5"/>
+    </pattern>
+    <rect width="1200" height="900" fill="url(#grid)"/>
+  </g>
+
+  <!-- 标题区 -->
+  <text x="600" y="45" text-anchor="middle" font-family="Arial, sans-serif" font-size="28" font-weight="bold" fill="#1e293b">FireFly Blog System Architecture</text>
+  <text x="600" y="72" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#64748b">萤火虫博客系统架构图 | Astro + Svelte + TailwindCSS</text>
+
+  <!-- ==================== 第一层：内容源 ==================== -->
+  <!-- Content Source 模块 -->
+  <g transform="translate(40, 100)">
+    <rect x="0" y="0" width="200" height="160" rx="12" fill="#f0fdf4" stroke="#22c55e" stroke-width="2"/>
+    <rect x="0" y="0" width="200" height="35" rx="12" fill="url(#greenGradient)"/>
+    <rect x="0" y="17" width="200" height="18" fill="url(#greenGradient)"/>
+    <text x="100" y="24" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#ffffff">📝 Content Source</text>
+
+    <g transform="translate(12, 45)">
+      <rect x="0" y="0" width="176" height="45" rx="6" fill="#ffffff" stroke="#bbf7d0" stroke-width="1"/>
+      <text x="88" y="18" text-anchor="middle" font-family="monospace" font-size="10" fill="#22c55e">src/content/posts/</text>
+      <text x="88" y="33" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#64748b">Markdown/MDX 文章</text>
+    </g>
+    <g transform="translate(12, 100)">
+      <rect x="0" y="0" width="176" height="45" rx="6" fill="#ffffff" stroke="#bbf7d0" stroke-width="1"/>
+      <text x="88" y="18" text-anchor="middle" font-family="monospace" font-size="10" fill="#22c55e">src/content/spec/</text>
+      <text x="88" y="33" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#64748b">特殊页面 (About, Friends)</text>
+    </g>
+  </g>
+
+  <!-- ==================== 第二层：Markdown 处理管道 ==================== -->
+  <!-- Markdown Pipeline 模块 -->
+  <g transform="translate(280, 100)">
+    <rect x="0" y="0" width="280" height="160" rx="12" fill="#fff7ed" stroke="#f97316" stroke-width="2"/>
+    <rect x="0" y="0" width="280" height="35" rx="12" fill="url(#orangeGradient)"/>
+    <rect x="0" y="17" width="280" height="18" fill="url(#orangeGradient)"/>
+    <text x="140" y="24" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#ffffff">⚙️ Markdown Pipeline</text>
+
+    <g transform="translate(12, 45)">
+      <rect x="0" y="0" width="120" height="50" rx="6" fill="#ffffff" stroke="#fed7aa" stroke-width="1"/>
+      <text x="60" y="18" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#f97316">Remark</text>
+      <text x="60" y="32" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#64748b">math, reading-time</text>
+      <text x="60" y="44" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#64748b">mermaid, directive</text>
+    </g>
+    <g transform="translate(145, 45)">
+      <rect x="0" y="0" width="120" height="50" rx="6" fill="#ffffff" stroke="#fed7aa" stroke-width="1"/>
+      <text x="60" y="18" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#f97316">Rehype</text>
+      <text x="60" y="32" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#64748b">katex, callouts</text>
+      <text x="60" y="44" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#64748b">slug, components</text>
+    </g>
+    <g transform="translate(12, 102)">
+      <rect x="0" y="0" width="253" height="45" rx="6" fill="#ffffff" stroke="#fed7aa" stroke-width="1"/>
+      <text x="126" y="18" text-anchor="middle" font-family="monospace" font-size="10" fill="#f97316">ExpressiveCode</text>
+      <text x="126" y="33" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#64748b">代码高亮 | 复制按钮 | 折叠代码块</text>
+    </g>
+  </g>
+
+  <!-- ==================== 第三层：Astro 构建 ==================== -->
+  <!-- Astro Build 模块 -->
+  <g transform="translate(600, 100)">
+    <rect x="0" y="0" width="260" height="160" rx="12" fill="#eff6ff" stroke="#3b82f6" stroke-width="2"/>
+    <rect x="0" y="0" width="260" height="35" rx="12" fill="url(#blueGradient)"/>
+    <rect x="0" y="17" width="260" height="18" fill="url(#blueGradient)"/>
+    <text x="130" y="24" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#ffffff">🚀 Astro Build</text>
+
+    <g transform="translate(12, 45)">
+      <rect x="0" y="0" width="110" height="50" rx="6" fill="#ffffff" stroke="#bfdbfe" stroke-width="1"/>
+      <text x="55" y="18" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#3b82f6">SSG</text>
+      <text x="55" y="32" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#64748b">静态站点生成</text>
+      <text x="55" y="44" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#94a3b8">Content Collections</text>
+    </g>
+    <g transform="translate(135, 45)">
+      <rect x="0" y="0" width="110" height="50" rx="6" fill="#ffffff" stroke="#bfdbfe" stroke-width="1"/>
+      <text x="55" y="18" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#3b82f6">Vite</text>
+      <text x="55" y="32" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#64748b">打包构建</text>
+      <text x="55" y="44" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#94a3b8">HMR 热更新</text>
+    </g>
+    <g transform="translate(12, 102)">
+      <rect x="0" y="0" width="233" height="45" rx="6" fill="#ffffff" stroke="#bfdbfe" stroke-width="1"/>
+      <text x="116" y="18" text-anchor="middle" font-family="monospace" font-size="10" fill="#3b82f6">Pagefind</text>
+      <text x="116" y="33" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#64748b">静态搜索索引生成 | 中文分词支持</text>
+    </g>
+  </g>
+
+  <!-- ==================== 第四层：静态输出 ==================== -->
+  <!-- Static Output 模块 -->
+  <g transform="translate(900, 100)">
+    <rect x="0" y="0" width="260" height="160" rx="12" fill="#faf5ff" stroke="#a855f7" stroke-width="2"/>
+    <rect x="0" y="0" width="260" height="35" rx="12" fill="url(#purpleGradient)"/>
+    <rect x="0" y="17" width="260" height="18" fill="url(#purpleGradient)"/>
+    <text x="130" y="24" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#ffffff">📦 Static Output</text>
+
+    <g transform="translate(12, 45)">
+      <rect x="0" y="0" width="110" height="50" rx="6" fill="#ffffff" stroke="#e9d5ff" stroke-width="1"/>
+      <text x="55" y="18" text-anchor="middle" font-family="monospace" font-size="10" fill="#a855f7">dist/</text>
+      <text x="55" y="32" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#64748b">HTML, CSS, JS</text>
+      <text x="55" y="44" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#94a3b8">优化压缩</text>
+    </g>
+    <g transform="translate(135, 45)">
+      <rect x="0" y="0" width="110" height="50" rx="6" fill="#ffffff" stroke="#e9d5ff" stroke-width="1"/>
+      <text x="55" y="18" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#a855f7">Assets</text>
+      <text x="55" y="32" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#64748b">图片 / 字体</text>
+      <text x="55" y="44" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#94a3b8">Sharp 优化</text>
+    </g>
+    <g transform="translate(12, 102)">
+      <rect x="0" y="0" width="233" height="45" rx="6" fill="#ffffff" stroke="#e9d5ff" stroke-width="1"/>
+      <text x="116" y="18" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#a855f7">SEO Files</text>
+      <text x="116" y="33" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#64748b">sitemap.xml | robots.txt | rss.xml</text>
+    </g>
+  </g>
+
+  <!-- ==================== 连接线 第一层 ==================== -->
+  <!-- Content -> Pipeline -->
+  <path d="M 240 180 L 280 180" stroke="#dcfce7" stroke-width="6" fill="none" stroke-linecap="round"/>
+  <path d="M 240 180 L 280 180" class="flow-line-green" stroke="#22c55e" stroke-width="3" fill="none" marker-end="url(#arrowGreen)" stroke-linecap="round"/>
+  <text x="260" y="170" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="#22c55e">MD/MDX</text>
+
+  <!-- Pipeline -> Astro -->
+  <path d="M 560 180 L 600 180" stroke="#fed7aa" stroke-width="6" fill="none" stroke-linecap="round"/>
+  <path d="M 560 180 L 600 180" class="flow-line-orange" stroke="#f97316" stroke-width="3" fill="none" marker-end="url(#arrowOrange)" stroke-linecap="round"/>
+  <text x="580" y="170" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="#f97316">AST</text>
+
+  <!-- Astro -> Output -->
+  <path d="M 860 180 L 900 180" stroke="#bfdbfe" stroke-width="6" fill="none" stroke-linecap="round"/>
+  <path d="M 860 180 L 900 180" class="flow-line-blue" stroke="#3b82f6" stroke-width="3" fill="none" marker-end="url(#arrowBlue)" stroke-linecap="round"/>
+  <text x="880" y="170" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="#3b82f6">Build</text>
+
+  <!-- ==================== 第二层：UI 组件 ==================== -->
+  <!-- Svelte Components 模块 -->
+  <g transform="translate(40, 300)">
+    <rect x="0" y="0" width="350" height="180" rx="12" fill="#f0fdf4" stroke="#42b883" stroke-width="2"/>
+    <rect x="0" y="0" width="350" height="35" rx="12" fill="url(#tealGradient)"/>
+    <rect x="0" y="17" width="350" height="18" fill="url(#tealGradient)"/>
+    <text x="175" y="24" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#ffffff">🎨 Svelte Components</text>
+
+    <g transform="translate(12, 45)">
+      <rect x="0" y="0" width="100" height="55" rx="6" fill="#ffffff" stroke="#86efac" stroke-width="1"/>
+      <text x="50" y="18" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="#42b883">Common</text>
+      <text x="50" y="32" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#64748b">Button, Icon</text>
+      <text x="50" y="44" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#94a3b8">Dropdown</text>
+    </g>
+    <g transform="translate(125, 45)">
+      <rect x="0" y="0" width="100" height="55" rx="6" fill="#ffffff" stroke="#86efac" stroke-width="1"/>
+      <text x="50" y="18" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="#42b883">Controls</text>
+      <text x="50" y="32" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#64748b">BackToTop</text>
+      <text x="50" y="44" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#94a3b8">FloatingTOC</text>
+    </g>
+    <g transform="translate(238, 45)">
+      <rect x="0" y="0" width="100" height="55" rx="6" fill="#ffffff" stroke="#86efac" stroke-width="1"/>
+      <text x="50" y="18" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="#42b883">Features</text>
+      <text x="50" y="32" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#64748b">KaTeX</text>
+      <text x="50" y="44" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#94a3b8">Fancybox</text>
+    </g>
+    <g transform="translate(12, 110)">
+      <rect x="0" y="0" width="155" height="55" rx="6" fill="#ffffff" stroke="#86efac" stroke-width="1"/>
+      <text x="77" y="18" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="#42b883">Comment System</text>
+      <text x="77" y="32" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#64748b">Waline | Giscus | Disqus</text>
+      <text x="77" y="44" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#94a3b8">Twikoo | Artalk</text>
+    </g>
+    <g transform="translate(180, 110)">
+      <rect x="0" y="0" width="155" height="55" rx="6" fill="#ffffff" stroke="#86efac" stroke-width="1"/>
+      <text x="77" y="18" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="#42b883">Analytics</text>
+      <text x="77" y="32" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#64748b">Google Analytics</text>
+      <text x="77" y="44" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#94a3b8">Microsoft Clarity</text>
+    </g>
+  </g>
+
+  <!-- Styles 模块 -->
+  <g transform="translate(420, 300)">
+    <rect x="0" y="0" width="200" height="180" rx="12" fill="#fff7ed" stroke="#f97316" stroke-width="2"/>
+    <rect x="0" y="0" width="200" height="35" rx="12" fill="url(#orangeGradient)"/>
+    <rect x="0" y="17" width="200" height="18" fill="url(#orangeGradient)"/>
+    <text x="100" y="24" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#ffffff">🎭 Styles</text>
+
+    <g transform="translate(12, 45)">
+      <rect x="0" y="0" width="176" height="40" rx="6" fill="#ffffff" stroke="#fed7aa" stroke-width="1"/>
+      <text x="88" y="17" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#f97316">TailwindCSS</text>
+      <text x="88" y="32" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#64748b">深色/浅色模式 | Typography</text>
+    </g>
+    <g transform="translate(12, 95)">
+      <rect x="0" y="0" width="176" height="40" rx="6" fill="#ffffff" stroke="#fed7aa" stroke-width="1"/>
+      <text x="88" y="17" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#f97316">Custom CSS</text>
+      <text x="88" y="32" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#64748b">markdown.css | toc.css</text>
+    </g>
+    <g transform="translate(12, 143)">
+      <rect x="0" y="0" width="176" height="28" rx="6" fill="#ffffff" stroke="#fed7aa" stroke-width="1"/>
+      <text x="88" y="18" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#f97316">PostCSS + Nesting</text>
+    </g>
+  </g>
+
+  <!-- Utils 模块 -->
+  <g transform="translate(650, 300)">
+    <rect x="0" y="0" width="200" height="180" rx="12" fill="#eff6ff" stroke="#3b82f6" stroke-width="2"/>
+    <rect x="0" y="0" width="200" height="35" rx="12" fill="url(#blueGradient)"/>
+    <rect x="0" y="17" width="200" height="18" fill="url(#blueGradient)"/>
+    <text x="100" y="24" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#ffffff">🔧 Utilities</text>
+
+    <g transform="translate(12, 45)">
+      <rect x="0" y="0" width="176" height="38" rx="6" fill="#ffffff" stroke="#bfdbfe" stroke-width="1"/>
+      <text x="88" y="16" text-anchor="middle" font-family="monospace" font-size="9" fill="#3b82f6">content-utils.ts</text>
+      <text x="88" y="30" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#64748b">内容处理和过滤</text>
+    </g>
+    <g transform="translate(12, 90)">
+      <rect x="0" y="0" width="176" height="38" rx="6" fill="#ffffff" stroke="#bfdbfe" stroke-width="1"/>
+      <text x="88" y="16" text-anchor="middle" font-family="monospace" font-size="9" fill="#3b82f6">image-utils.ts</text>
+      <text x="88" y="30" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#64748b">图片优化处理</text>
+    </g>
+    <g transform="translate(12, 135)">
+      <rect x="0" y="0" width="176" height="38" rx="6" fill="#ffffff" stroke="#bfdbfe" stroke-width="1"/>
+      <text x="88" y="16" text-anchor="middle" font-family="monospace" font-size="9" fill="#3b82f6">tocUtils.ts</text>
+      <text x="88" y="30" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#64748b">目录生成管理</text>
+    </g>
+  </g>
+
+  <!-- User/Browser 模块 -->
+  <g transform="translate(880, 300)">
+    <rect x="0" y="0" width="280" height="180" rx="12" fill="#f1f5f9" stroke="#0ea5e9" stroke-width="2"/>
+    <rect x="0" y="0" width="280" height="35" rx="12" fill="url(#skyGradient)"/>
+    <rect x="0" y="17" width="280" height="18" fill="url(#skyGradient)"/>
+    <text x="140" y="24" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#ffffff">👤 User Experience</text>
+
+    <g transform="translate(12, 45)">
+      <rect x="0" y="0" width="120" height="55" rx="6" fill="#ffffff" stroke="#bae6fd" stroke-width="1"/>
+      <text x="60" y="18" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="#0ea5e9">Swup</text>
+      <text x="60" y="32" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#64748b">页面转场动画</text>
+      <text x="60" y="44" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#94a3b8">SPA 体验</text>
+    </g>
+    <g transform="translate(145, 45)">
+      <rect x="0" y="0" width="120" height="55" rx="6" fill="#ffffff" stroke="#bae6fd" stroke-width="1"/>
+      <text x="60" y="18" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="#0ea5e9">Theme</text>
+      <text x="60" y="32" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#64748b">深色/浅色切换</text>
+      <text x="60" y="44" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#94a3b8">LocalStorage</text>
+    </g>
+    <g transform="translate(12, 110)">
+      <rect x="0" y="0" width="120" height="55" rx="6" fill="#ffffff" stroke="#bae6fd" stroke-width="1"/>
+      <text x="60" y="18" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="#0ea5e9">Search</text>
+      <text x="60" y="32" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#64748b">Pagefind 搜索</text>
+      <text x="60" y="44" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#94a3b8">客户端索引</text>
+    </g>
+    <g transform="translate(145, 110)">
+      <rect x="0" y="0" width="120" height="55" rx="6" fill="#ffffff" stroke="#bae6fd" stroke-width="1"/>
+      <text x="60" y="18" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="#0ea5e9">Effects</text>
+      <text x="60" y="32" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#64748b">樱花特效</text>
+      <text x="60" y="44" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#94a3b8">Sakura Manager</text>
+    </g>
+  </g>
+
+  <!-- ==================== 连接线 第二层 ==================== -->
+  <!-- Components -> Astro (垂直) -->
+  <path d="M 215 300 L 215 280 L 730 280 L 730 260" stroke="#dcfce7" stroke-width="6" fill="none" stroke-linecap="round"/>
+  <path d="M 215 300 L 215 280 L 730 280 L 730 260" class="flow-line-teal" stroke="#42b883" stroke-width="3" fill="none" marker-end="url(#arrowTeal)" stroke-linecap="round"/>
+
+  <!-- Styles -> Astro (垂直) -->
+  <path d="M 520 300 L 520 280" stroke="#fed7aa" stroke-width="6" fill="none" stroke-linecap="round"/>
+  <path d="M 520 300 L 520 280" class="flow-line-orange" stroke="#f97316" stroke-width="3" fill="none" stroke-linecap="round"/>
+
+  <!-- Utils -> Astro (垂直) -->
+  <path d="M 750 300 L 750 260" stroke="#bfdbfe" stroke-width="6" fill="none" stroke-linecap="round"/>
+  <path d="M 750 300 L 750 260" class="flow-line-blue" stroke="#3b82f6" stroke-width="3" fill="none" marker-end="url(#arrowBlue)" stroke-linecap="round"/>
+
+  <!-- Output -> User -->
+  <path d="M 1030 260 L 1030 300" stroke="#e9d5ff" stroke-width="6" fill="none" stroke-linecap="round"/>
+  <path d="M 1030 260 L 1030 300" class="flow-line-purple" stroke="#a855f7" stroke-width="3" fill="none" marker-end="url(#arrowPurple)" stroke-linecap="round"/>
+  <text x="1050" y="285" text-anchor="start" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="#a855f7">Deploy</text>
+
+  <!-- ==================== 流程说明区域 ==================== -->
+  <g transform="translate(40, 520)">
+    <rect x="0" y="0" width="520" height="200" rx="10" fill="#f8fafc" stroke="#e2e8f0" stroke-width="2"/>
+    <text x="260" y="25" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#1e293b">📋 数据流程说明 / Data Flow</text>
+
+    <g transform="translate(20, 45)">
+      <circle cx="8" cy="8" r="6" fill="#22c55e"/>
+      <text x="25" y="12" font-family="Arial, sans-serif" font-size="11" fill="#1e293b">1. 内容创作：在 src/content/ 编写 Markdown/MDX 文章</text>
+    </g>
+    <g transform="translate(20, 72)">
+      <circle cx="8" cy="8" r="6" fill="#f97316"/>
+      <text x="25" y="12" font-family="Arial, sans-serif" font-size="11" fill="#1e293b">2. 内容处理：Remark/Rehype 插件转换 Markdown 为 HTML AST</text>
+    </g>
+    <g transform="translate(20, 99)">
+      <circle cx="8" cy="8" r="6" fill="#3b82f6"/>
+      <text x="25" y="12" font-family="Arial, sans-serif" font-size="11" fill="#1e293b">3. 静态构建：Astro SSG 生成优化后的静态 HTML/CSS/JS</text>
+    </g>
+    <g transform="translate(20, 126)">
+      <circle cx="8" cy="8" r="6" fill="#a855f7"/>
+      <text x="25" y="12" font-family="Arial, sans-serif" font-size="11" fill="#1e293b">4. 搜索索引：Pagefind 生成客户端搜索索引</text>
+    </g>
+    <g transform="translate(20, 153)">
+      <circle cx="8" cy="8" r="6" fill="#42b883"/>
+      <text x="25" y="12" font-family="Arial, sans-serif" font-size="11" fill="#1e293b">5. 组件渲染：Svelte 组件提供交互式 UI 体验</text>
+    </g>
+    <g transform="translate(20, 180)">
+      <circle cx="8" cy="8" r="6" fill="#0ea5e9"/>
+      <text x="25" y="12" font-family="Arial, sans-serif" font-size="11" fill="#1e293b">6. 用户体验：Swup 页面转场 + 主题切换 + 本地存储</text>
+    </g>
+  </g>
+
+  <!-- ==================== 技术栈信息 ==================== -->
+  <g transform="translate(580, 520)">
+    <rect x="0" y="0" width="580" height="200" rx="10" fill="#f8fafc" stroke="#e2e8f0" stroke-width="2"/>
+    <text x="290" y="25" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#1e293b">🛠️ 技术栈 / Tech Stack</text>
+
+    <!-- 左列 -->
+    <g transform="translate(20, 45)">
+      <text x="0" y="12" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#3b82f6">Core Framework</text>
+      <text x="0" y="30" font-family="monospace" font-size="10" fill="#64748b">Astro 5.16.8 + Svelte 5.46.1</text>
+
+      <text x="0" y="55" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#22c55e">Styling</text>
+      <text x="0" y="73" font-family="monospace" font-size="10" fill="#64748b">TailwindCSS 3.4 + PostCSS</text>
+
+      <text x="0" y="98" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#f97316">Language</text>
+      <text x="0" y="116" font-family="monospace" font-size="10" fill="#64748b">TypeScript 5.9.2</text>
+
+      <text x="0" y="141" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#a855f7">Package Manager</text>
+      <text x="0" y="159" font-family="monospace" font-size="10" fill="#64748b">pnpm 9.14.4</text>
+    </g>
+
+    <!-- 中列 -->
+    <g transform="translate(200, 45)">
+      <text x="0" y="12" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#42b883">Markdown</text>
+      <text x="0" y="30" font-family="monospace" font-size="10" fill="#64748b">MDX + Remark + Rehype</text>
+
+      <text x="0" y="55" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#0ea5e9">Code Highlight</text>
+      <text x="0" y="73" font-family="monospace" font-size="10" fill="#64748b">ExpressiveCode + Shiki</text>
+
+      <text x="0" y="98" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#ec4899">Math &amp; Diagrams</text>
+      <text x="0" y="116" font-family="monospace" font-size="10" fill="#64748b">KaTeX + Mermaid</text>
+
+      <text x="0" y="141" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#eab308">Image Processing</text>
+      <text x="0" y="159" font-family="monospace" font-size="10" fill="#64748b">Sharp 0.34.5</text>
+    </g>
+
+    <!-- 右列 -->
+    <g transform="translate(400, 45)">
+      <text x="0" y="12" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#6366f1">Search</text>
+      <text x="0" y="30" font-family="monospace" font-size="10" fill="#64748b">Pagefind 1.4.0</text>
+
+      <text x="0" y="55" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#14b8a6">Animation</text>
+      <text x="0" y="73" font-family="monospace" font-size="10" fill="#64748b">Swup + GSAP</text>
+
+      <text x="0" y="98" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#f43f5e">Icons</text>
+      <text x="0" y="116" font-family="monospace" font-size="10" fill="#64748b">Iconify (FA6 + Material)</text>
+
+      <text x="0" y="141" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#8b5cf6">Lightbox</text>
+      <text x="0" y="159" font-family="monospace" font-size="10" fill="#64748b">Fancybox / PhotoSwipe</text>
+    </g>
+  </g>
+
+  <!-- ==================== 图例 ==================== -->
+  <g transform="translate(40, 740)">
+    <rect x="0" y="0" width="1120" height="55" rx="8" fill="#f8fafc" stroke="#e2e8f0" stroke-width="2"/>
+    <text x="560" y="18" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#64748b">LEGEND</text>
+
+    <rect x="30" y="32" width="24" height="14" rx="3" fill="#22c55e"/>
+    <text x="60" y="44" font-family="Arial, sans-serif" font-size="10" fill="#1e293b">Content Source</text>
+
+    <rect x="175" y="32" width="24" height="14" rx="3" fill="#f97316"/>
+    <text x="205" y="44" font-family="Arial, sans-serif" font-size="10" fill="#1e293b">Processing</text>
+
+    <rect x="300" y="32" width="24" height="14" rx="3" fill="#3b82f6"/>
+    <text x="330" y="44" font-family="Arial, sans-serif" font-size="10" fill="#1e293b">Build System</text>
+
+    <rect x="435" y="32" width="24" height="14" rx="3" fill="#a855f7"/>
+    <text x="465" y="44" font-family="Arial, sans-serif" font-size="10" fill="#1e293b">Static Output</text>
+
+    <rect x="570" y="32" width="24" height="14" rx="3" fill="#42b883"/>
+    <text x="600" y="44" font-family="Arial, sans-serif" font-size="10" fill="#1e293b">UI Components</text>
+
+    <rect x="720" y="32" width="24" height="14" rx="3" fill="#0ea5e9"/>
+    <text x="750" y="44" font-family="Arial, sans-serif" font-size="10" fill="#1e293b">User Experience</text>
+
+    <!-- 流动线示例 -->
+    <path d="M 880 39 L 930 39" stroke="#94a3b8" stroke-width="6" fill="none" stroke-linecap="round"/>
+    <path d="M 880 39 L 930 39" class="flow-line-blue" stroke="#3b82f6" stroke-width="3" fill="none" marker-end="url(#arrowBlue)" stroke-linecap="round"/>
+    <text x="945" y="44" font-family="Arial, sans-serif" font-size="10" fill="#1e293b">Data Flow (Animated)</text>
+  </g>
+
+  <!-- 版本信息 -->
+  <text x="1160" y="880" text-anchor="end" font-family="Arial, sans-serif" font-size="10" fill="#94a3b8">FireFly Blog v5.16.8 | Generated 2026-02</text>
+</svg>
